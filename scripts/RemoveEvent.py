@@ -1,6 +1,6 @@
 import os
 
-eventId = '1mYu6cGMR'
+eventId = 'iuq6O2mCN'
 
 comiketDir = "content/comiket"
 nonEventReferencedImages = []

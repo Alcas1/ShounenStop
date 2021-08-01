@@ -1,5 +1,5 @@
 ---
-eventName: Sunshine Summer 21 (Current)
+eventName: "Sunshine Summer 21 "
 currentEvent: true
 onsale: false
 eventDesc: First come first serve, we may provide you with updated prices or set

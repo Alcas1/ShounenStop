@@ -10,7 +10,6 @@ CMS.registerEventListener({
     console.log(`entry.newRecord:`, entry.newRecord); // true
     console.log(`entry.collection:`, entry.collection); // 'articles'
     console.log(`entry.data:`, entry.data); // { ... }
-    console.log("OMG WHERE IS THIS");
 
     axios.get('https://us-central1-shounenstop.cloudfunctions.net/ValidatePayment')
         .then(function (response) {

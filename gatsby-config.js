@@ -18,7 +18,7 @@ module.exports = {
   },
   siteMetadata: {
     title: `Shounen Stop`,
-    description: `Website for sales of Japanese/Anime goods.`,
+    description: `Weiss Schwarz, Comiket, and Anime items at a great value.`,
     author: `Jonathan Wu`,
   },
   plugins: [

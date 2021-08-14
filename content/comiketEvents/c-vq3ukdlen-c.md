@@ -1,6 +1,6 @@
 ---
 eventName: Air Comiket Summer (Current)
-currentEvent: false
+currentEvent: true
 onsale: true
 eventDesc: First come first serve, we may provide you with updated prices or set
   purchase requirements as further information is released from the doujin

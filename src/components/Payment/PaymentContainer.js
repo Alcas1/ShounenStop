@@ -39,7 +39,7 @@ class PaymentContainer extends React.Component {
     super(props)
     const price = props.orderContext.totalPrice
     const paypalFeeAmount = Number(
-      (((price + 0.300) / 0.971) - price).toFixed(2)
+      (((price + 0.4900) / 0.9651) - price).toFixed(2)
     )
 
     this.state = {

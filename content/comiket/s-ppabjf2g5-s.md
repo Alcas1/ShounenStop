@@ -2,6 +2,7 @@
 image: images/rareafskystrikerset.png
 producttype: Mini Sleeves
 eventId: 1mYu6cGMR
+onsale: false
 pricings:
   - quantity: 1
     price: 55

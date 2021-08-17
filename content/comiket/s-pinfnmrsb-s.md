@@ -1,6 +1,6 @@
 ---
 image: images/comiketsummere3rc65huuau8qgr.jpg
-producttype: Sleeves
+producttype: Mini Sleeves
 eventId: c-vLkg_Y6KL-c
 weight: 0
 pricings:

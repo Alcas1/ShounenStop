@@ -2,6 +2,7 @@
 image: images/comiketsummere8btt3vwqbil6do.jpg
 producttype: Sleeves
 eventId: c-vq3UkDleN-c
+onsale: false
 weight: 0
 pricings:
   - quantity: 1

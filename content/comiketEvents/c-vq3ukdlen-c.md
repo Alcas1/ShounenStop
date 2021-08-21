@@ -1,5 +1,5 @@
 ---
-eventName: Air Comiket Summer (Current)
+eventName: Air Comiket Summer
 currentEvent: false
 onsale: false
 eventDesc: First come first serve, we may provide you with updated prices or set

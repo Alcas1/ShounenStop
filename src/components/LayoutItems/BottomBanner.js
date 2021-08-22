@@ -28,25 +28,49 @@ const BottomBanner = () => {
 
   const Banner = useCallback(() => (
     (
-      !bannerDismissed && <div css={bottomBannerContainer}>
-        <div css={bannerTextStyles}>
-          <img css={infoIconStyles} src={iconInfo}></img>
-          {data.bottomBannerText.frontmatter.bannerText}
-        </div>
-        <div
-          css={dismissButton}
-          onClick={() => {
-            setBannerDismissed(true)
-            dismissBanner()
-          }}
-        >
-          Dismiss
+      !bannerDismissed && <div css={bottomBannerFullscreenOverlay}>
+          <div css={bottomBannerContainer}>
+          <div css={bannerTextContainer}>
+            <img css={infoIconStyles} src={iconInfo}></img>
+            {data.bottomBannerText.frontmatter.bannerText}
+          </div>
+          <div css={dismissButtonContainer}>
+            <div
+              css={dismissButton}
+              onClick={() => {
+                setBannerDismissed(true)
+                dismissBanner()
+              }}
+            >
+              Got It ✔
+            </div>
+          </div>
         </div>
       </div>
   )))
 
   return(<div className="bannerFade"><Banner/></div>)
 }
+
+const bottomBannerFullscreenOverlay = css`
+  display: flex;
+  align-items: flex-end;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  backdrop-filter: blur(2px);
+  background: rgba(0, 10, 20, 0.5);
+`
+
+const bannerTextContainer = css`
+  padding: 30px;
+
+  @media only screen and (max-width: 640px) {
+    padding: 15px 15px 0 15px;
+  }
+`
 
 const infoIconStyles = css`
   height: 20px;
@@ -57,43 +81,40 @@ const infoIconStyles = css`
   padding-right:5px;
   `
 
+const bottomBannerContainer = css`
+  width: 100%;
+  color: #dcecff;
+  font-size: 1rem;
+  font-family: montserrat;
+  background: #13346c;
+  display: flex;
+  align-items: center;
+
+  @media only screen and (max-width: 640px) {
+    flex-direction: column;
+  }
+`
+
+const dismissButtonContainer = css`
+  padding: 15px;
+  width: 100%;
+`
+
 const dismissButton = css`
   cursor: pointer;
-
-  position: absolute;
-  right: 15px;
-  bottom: calc(50% - 10px);
-  font-size: 15px;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.8); */
+  padding: 15px 30px;
+  background: lightseagreen;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1rem;
+  padding: 15px 30px;
+  border-radius: 4px;
 
   transition: color ease-in-out 0.25s;
   &:hover {
     color: rgba(255, 255, 255, 1);
   }
-`
-
-const bannerTextStyles = css`
-  padding-right: 80px;
-`
-
-const bottomBannerContainer = css`
-  position: fixed;
-  z-index: 9999;
-  bottom: 0;
-  left: 0;
-  // right: 0;
-  // top: 0;
-  width: 100%;
-  color: #dcecff;
-  font-size: 16px;
-  padding-left: 10px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-
-  font-family: montserrat;
-  background-image: linear-gradient(to right, #13346c, #4c91a9);
-  // display: flex;
-  // flex-wrap: wrap;
 `
 
 export default BottomBanner

@@ -57,7 +57,7 @@ const landingStyles = css`
 `
 
 const shopNow = css`
-  font-size: 22px;
+  font-size: 1.25rem;
   letter-spacing: 2px;
   width: 300px;
   height: 80px;
@@ -96,7 +96,6 @@ const shippingText = css`
 `
 
 const landingSection = css`
-  margin-top: 120px;
   max-width: 800px;
   display: flex;
   align-items: center;

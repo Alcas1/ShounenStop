@@ -58,7 +58,7 @@ const bottomBannerFullscreenOverlay = css`
   position: fixed;
   z-index: 9999;
   top: 0;
-  height: 100vh;
+  height: 100%;
   width: 100%;
   backdrop-filter: blur(2px);
   background: rgba(0, 10, 20, 0.5);

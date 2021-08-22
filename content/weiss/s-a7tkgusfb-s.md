@@ -7,7 +7,7 @@ image: images/71941-7.jpg
 color: "#e9847b"
 pricings:
   - quantity: 1
-    price: 101
+    price: 108
 description: "2 of each 7 kinds of opened tds "
 weight: 3
 preorder: 2021-09-08T16:00:00.000Z

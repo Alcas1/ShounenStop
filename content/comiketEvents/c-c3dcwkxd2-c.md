@@ -1,6 +1,6 @@
 ---
 eventName: "Puriuma Nagoya Cup "
-currentEvent: true
+currentEvent: false
 onsale: false
 eventDesc: Premity Nagoya Cup
 preorder: 2021-08-21T16:00:00.000Z

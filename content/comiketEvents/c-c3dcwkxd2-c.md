@@ -1,5 +1,5 @@
 ---
-eventName: Puriuma Nagoya Cup (Current)
+eventName: "Puriuma Nagoya Cup "
 currentEvent: true
 onsale: false
 eventDesc: Premity Nagoya Cup

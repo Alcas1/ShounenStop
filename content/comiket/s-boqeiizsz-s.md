@@ -6,7 +6,7 @@ weight: 0
 pricings:
   - quantity: 1
     price: 65
-description: This is a special bundle with this card sleeves with other random
+description: This is a special bundle with this card sleeves with 4 other random
   sleeves from previous events
 asin: s-boqeIIzsz-s
 merchandise: comiket

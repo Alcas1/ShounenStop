@@ -1,6 +1,6 @@
 ---
 eventName: Air Comic Treasure (Current)
-currentEvent: true
+currentEvent: false
 onsale: true
 eventDesc: "First come first serve, we may provide you with updated prices or
   set purchase requirements as further information is released from the doujin

@@ -1,0 +1,11 @@
+---
+image: images/comictreasuree9onbtzuuayh3sv.jpg
+producttype: Playmat
+eventId: c-DXJvvgVBj-c
+weight: 0
+pricings:
+  - quantity: 1
+    price: 65
+asin: s-AOrJ6XAKL-s
+merchandise: comiket
+---

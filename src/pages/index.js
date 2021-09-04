@@ -6,6 +6,8 @@ import ComiketBanner from '../components/Index/ComiketBanner'
 import NewReleases from '../components/Index/newReleases'
 import SEO from '../components/Common/seo'
 
+// Test
+
 const IndexPage = () => {
   const data = useStaticQuery(query)
   const {

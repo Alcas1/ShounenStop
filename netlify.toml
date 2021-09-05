@@ -10,7 +10,7 @@
   # been specified, include it in the publish directory path.
   publish = "public/"
 
-  functions = "functions"
+  functions="public/functions"
 
   # Default build command.
   command = "CI= npm run build"

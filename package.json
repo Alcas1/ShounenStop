@@ -59,6 +59,7 @@
     "build:lambda": "netlify-lambda build src/functions",
     "build:app": "gatsby build",
     "develop": "gatsby develop",
+    "lambda": "netlify-lambda build src/functions",
     "start": "run-p start:**",
     "start:app": "npm run develop",
     "start:lambda": "netlify-lambda serve src/functions",

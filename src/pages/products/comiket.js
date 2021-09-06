@@ -6,6 +6,7 @@ import { Container } from 'react-bootstrap'
 import ProductPageContainer from '../../components/Products/ProductPageContainer'
 import ComiketProductCard from '../../components/Comiket/ComiketProductCard'
 import FilterProductCategory from '../../components/Products/FilterProductCategory'
+import NSFWToggle from '../../components/NSFW/NSFWToggle'
 
 const productTypeKey = 'producttype'
 const eventKey = 'event'
@@ -176,6 +177,9 @@ const Comiket = ({ data, location }) => {
             <div css={productHeaderSubtitleText}>
               {eventFilterMap[currentEventFilterListItem].eventDesc}
             </div>
+          </div>
+          <div className="d-flex justify-content-end">
+          <NSFWToggle />
           </div>
           <div className="row" css={productContentWrapper}>
             {comiketProductData

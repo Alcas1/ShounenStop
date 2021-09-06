@@ -1,4 +1,4 @@
-import React, { useState, useLayoutEffect,useMemo, useEffect, useCallback } from 'react'
+import React, { useState, useLayoutEffect, useMemo, useEffect, useCallback } from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import iconInfo from '../../images/infoIcon.svg'
 
@@ -22,14 +22,14 @@ const BottomBanner = () => {
   const data = useStaticQuery(query)
   const [bannerDismissed, setBannerDismissed] = useState(false)
 
-  useLayoutEffect(()=>{
+  useLayoutEffect(() => {
     setBannerDismissed(getBannerDismissed())
   })
 
   const Banner = useCallback(() => (
     (
       !bannerDismissed && <div css={bottomBannerFullscreenOverlay}>
-          <div css={bottomBannerContainer}>
+        <div css={bottomBannerContainer}>
           <div css={bannerTextContainer}>
             <img css={infoIconStyles} src={iconInfo}></img>
             {data.bottomBannerText.frontmatter.bannerText}
@@ -47,9 +47,9 @@ const BottomBanner = () => {
           </div>
         </div>
       </div>
-  )))
+    )))
 
-  return(<div className="bannerFade"><Banner/></div>)
+  return (<div className="bannerFade"><Banner /></div>)
 }
 
 const bottomBannerFullscreenOverlay = css`
@@ -61,6 +61,7 @@ const bottomBannerFullscreenOverlay = css`
   height: 100%;
   width: 100%;
   backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
   background: rgba(0, 10, 20, 0.5);
 `
 

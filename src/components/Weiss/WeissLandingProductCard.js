@@ -1,9 +1,10 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import { Link } from 'gatsby'
 import Img from 'gatsby-image'
 import { css } from '@emotion/core'
 import ContextConsumer from '../LayoutItems/CartContext'
 import ScrollContainer from 'react-indiana-drag-scroll'
+import { NSFWContext } from '../../utils/NSFWContext'
 
 const WeissLandingProductCard = ({
   imgData,
@@ -20,6 +21,8 @@ const WeissLandingProductCard = ({
   color,
   url,
 }) => {
+  const { NSFWEnabled } = useContext(NSFWContext)
+
   const [quantity, setQuantity] = useState(1)
 
   const cardBottom = css`
@@ -176,7 +179,7 @@ const WeissLandingProductCard = ({
           <div css={cardContainer} className="fadeItem">
             <Link to={url} className="link-no-style">
               <div css={imgContainer}>
-                <Img css={imgStyles} fluid={{ ...imgData, aspectRatio: 1 }} />
+                <Img css={NSFWEnabled ? imgStyles : imgBlurredStyles} fluid={{ ...imgData, aspectRatio: 1 }} />
               </div>
             </Link>
             <div className="cardBottom" css={cardBottom}>
@@ -390,6 +393,17 @@ const imgStyles = css`
     cubic-bezier(0.645, 0.045, 0.355, 1);
   transition-duration: 300ms, 300ms, 300ms, 300ms;
 `
+
+const imgBlurredStyles = css`
+  padding-bottom: 60px;
+  transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1),
+    cubic-bezier(0.645, 0.045, 0.355, 1), cubic-bezier(0.645, 0.045, 0.355, 1),
+    cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition-duration: 300ms, 300ms, 300ms, 300ms;
+  filter: blur(4px);
+  -webkit-filter: blur(4px);
+`
+
 
 const productTypeText = css`
   line-height: 20px;

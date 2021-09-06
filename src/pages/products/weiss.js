@@ -6,6 +6,7 @@ import { Container } from 'react-bootstrap'
 import ProductPageContainer from '../../components/Products/ProductPageContainer'
 import FilterProductCategory from '../../components/Products/FilterProductCategory'
 import WeissProductCardNew from '../../components/Weiss/WeissProductCardNew'
+import NSFWToggle from '../../components/NSFW/NSFWToggle'
 
 const lowestPrice = pricings => {
   return Math.min.apply(
@@ -130,6 +131,7 @@ const Weiss = ({ data, location }) => {
           <div css={productCategoryHeaderContainer}>
             <div css={productCategoryHeader}>Weiss</div>
             <div css={productHeaderSubtitleText}></div>
+            <NSFWToggle />
           </div>
           <div className="row" css={productContentWrapper}>
             {weissProductData
@@ -217,6 +219,9 @@ const productCategoryHeaderContainer = css`
   width: 100%;
   padding-left: 10px;
   padding-right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 `
 
 const productPageContainer = css`

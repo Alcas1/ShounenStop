@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Link } from 'gatsby'
 import Img from 'gatsby-image'
 import { css } from '@emotion/core'
 import ContextConsumer from '../LayoutItems/CartContext'
+import { NSFWContext } from '../../utils/NSFWContext'
 
 const ComiketProductCard = ({
   imgData,
@@ -14,6 +15,8 @@ const ComiketProductCard = ({
   onsale,
   delay
 }) => {
+  const { NSFWEnabled } = useContext(NSFWContext)
+
   var initialVisible = false
   if(delay <= 0){
     initialVisible = true;
@@ -57,7 +60,7 @@ const ComiketProductCard = ({
                 </div>}
               </div>
               <Link to={url} className="link-no-style">
-                <Img css={imgStyles} fluid={{ ...imgData, aspectRatio: 1 }} />
+                <Img css={NSFWEnabled ? imgStyles : imgBlurredStyles} fluid={{ ...imgData, aspectRatio: 1 }} />
               </Link>
             </div>
           </div>
@@ -134,6 +137,11 @@ const imgContainer = css`
 
 const imgStyles = css`
   border-radius: 8px;
+`
+
+const imgBlurredStyles = css`
+  filter: blur(2px);
+  -webkit-filter: blur(2px);
 `
 
 const productTypeText = css`

@@ -1,6 +1,10 @@
 import os
 
+<<<<<<< HEAD
 eventId = 'c-1xqKj5UJA-c'
+=======
+eventId = 'c-vq3UkDleN-c'
+>>>>>>> parent of b4f4d891... remove Air Comic Treasure (Current)
 
 comiketDir = "content/comiket"
 nonEventReferencedImages = []

@@ -1,14 +1,6 @@
 import os
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 eventId = 'c-1xqKj5UJA-c'
-=======
-eventId = 'c-vq3UkDleN-c'
->>>>>>> parent of b4f4d891... remove Air Comic Treasure (Current)
-=======
-eventId = 'c-c3dcWkXD2-c'
->>>>>>> parent of fff9bafa... remove Air Comiket Summer
 
 comiketDir = "content/comiket"
 nonEventReferencedImages = []

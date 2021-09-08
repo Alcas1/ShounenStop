@@ -1,5 +1,5 @@
 ---
-eventName: Air Comic Treasure (Current)
+eventName: "Air Comic Treasure "
 currentEvent: false
 onsale: false
 eventDesc: "First come first serve, we may provide you with updated prices or

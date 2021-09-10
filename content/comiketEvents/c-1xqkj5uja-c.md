@@ -1,7 +1,7 @@
 ---
-eventName: Air Comic Treasure Pt 2 (Current)
+eventName: "Air Comic Treasure Pt 2 "
 currentEvent: true
-onsale: true
+onsale: false
 eventDesc: "Slightly later deadline for these items, hence the name part 2.
   First come first serve, we may provide you with updated prices or set purchase
   requirements as further information is released from the doujin circles, but

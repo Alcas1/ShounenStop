@@ -1,5 +1,5 @@
 ---
-image: images/p2comictreasureedffw.png
+image: images/p2comictreasureedffw.jpg
 producttype: Mini Sleeves
 eventId: c-1xqKj5UJA-c
 weight: 0

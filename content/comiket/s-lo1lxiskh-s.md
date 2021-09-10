@@ -1,5 +1,5 @@
 ---
-image: images/p2comictreasuressssssssaaaaaaaaaaaaaaaaaa.png
+image: images/p2comictreasuressssssssaaaaaaaaaaaaaaaaaa.jpg
 producttype: Sleeves
 eventId: c-1xqKj5UJA-c
 weight: 0

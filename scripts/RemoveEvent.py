@@ -1,6 +1,7 @@
 import os
+import sys
 
-eventId = 'c-c3dcWkXD2-c'
+eventId = sys.arv[0] or 'c-vq3UkDleN-c' 
 
 comiketDir = "content/comiket"
 nonEventReferencedImages = []
@@ -34,4 +35,3 @@ for key in itemsToDelete:
       print("Removed:", itemsToDelete[key])
   else:
     print("Could not find:", itemsToDelete[key])
-

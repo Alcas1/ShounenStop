@@ -79,10 +79,10 @@ const AboutContainer = () => {
               </div>
               <div className="col-xl-9 col-lg-8 col-md-8 col-sm-8 col-12">
                 <h3 css={personTitleStyles}>Jonathan Wu</h3>
-                <span css={titleHeader}>DEVELOPER</span>
+                <span css={titleHeader}>CTO</span>
                 <div css={personBorder}></div>
                 <p>
-                  Created the site and is responsible for the UI/UX design. Feel
+                  Created the site from scratch and is responsible for the UI/UX design. Feel
                   free to contact him if you have a website you would like to
                   improve or want to create a website.
                 </p>

@@ -145,6 +145,7 @@ collections:
       - { label: Series, name: series, widget: string }
       - { label: Image, name: image, widget: image }
       - { label: Product Primary Color Hex, name: color, widget: string }
+      - { label: 'NSFW?', name: nsfw, widget: boolean, default: false }
       - label: Pricings
         name: pricings
         widget: list
@@ -236,6 +237,7 @@ collections:
           default: 0,
           min: 0,
         }
+      - { label: 'NSFW?', name: nsfw, widget: boolean, default: false }
       - label: Pricings
         name: pricings
         widget: list
@@ -278,6 +280,7 @@ collections:
       - { label: Description, name: description, widget: text, required: false }
       - { label: 'Ebay Link', name: ebayLink, widget: string }
       - { label: 'Shipping From Location', name: shippingFrom, widget: string }
+      - { label: 'NSFW?', name: nsfw, widget: boolean, default: false }
       - label: Pricings
         name: pricings
         widget: list

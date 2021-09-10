@@ -15,6 +15,15 @@ const navigateSelected = (url, hash) => {
 }
 
 const Comiket = ({ data, location }) => {
+  const [NSFWEnable, setNSFWEnable] = useState(() => {
+    return window.localStorage.getItem('NSFWEnabled') === 'true'
+  })
+
+  const handleToggleNSFW = () => {
+    setNSFWEnable(!NSFWEnable)
+    window.localStorage.setItem('NSFWEnabled', NSFWEnable.toString())
+  }
+
   const comiketProductData = data.comiketProducts.edges
   const comiketEventInfo = data.comiketEventInfo.edges
     .sort((a, b) => (a.node.frontmatter.currentEvent === true ? -1 : 1))
@@ -179,7 +188,8 @@ const Comiket = ({ data, location }) => {
             </div>
           </div>
           <div className="d-flex justify-content-end">
-          <NSFWToggle />
+          {/* <NSFWToggle /> */}
+          <button onClick={handleToggleNSFW}>Toggle NSFW</button>
           </div>
           <div className="row" css={productContentWrapper}>
             {comiketProductData
@@ -208,6 +218,7 @@ const Comiket = ({ data, location }) => {
                   url={'/products' + edge.node.fields.slug}
                   onsale={edge.node.frontmatter.onsale}
                   delay={iOS ? index/10 : index*25}
+                  blur={NSFWEnable}
                 />
               ))}
           </div>

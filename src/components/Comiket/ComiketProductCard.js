@@ -3,7 +3,6 @@ import { Link } from 'gatsby'
 import Img from 'gatsby-image'
 import { css } from '@emotion/core'
 import ContextConsumer from '../LayoutItems/CartContext'
-import { NSFWContext } from '../../utils/NSFWContext'
 
 const ComiketProductCard = ({
   imgData,
@@ -13,18 +12,19 @@ const ComiketProductCard = ({
   price,
   url,
   onsale,
-  delay
+  delay,
+  blur
 }) => {
-  const { NSFWEnabled } = useContext(NSFWContext)
-
   var initialVisible = false
-  if(delay <= 0){
+  if (delay <= 0) {
     initialVisible = true;
   }
 
   const [visible, setVisible] = useState(initialVisible);
+  const [nsfwVisible, setNsfwVisible] = useState(false)
+
   useEffect(() => {
-    let timer = setTimeout(() =>{
+    let timer = setTimeout(() => {
       setVisible(true);
     }, delay);
 
@@ -32,6 +32,16 @@ const ComiketProductCard = ({
       clearTimeout(timer)
     }
   }, [delay]);
+
+  useEffect(() => {
+    let nsfwTimer = setTimeout(() => {
+      setNsfwVisible(blur);
+    }, delay)
+
+    return () => {
+      clearTimeout(nsfwTimer)
+    }
+  }, [blur]);
 
   return (
     visible &&
@@ -60,7 +70,7 @@ const ComiketProductCard = ({
                 </div>}
               </div>
               <Link to={url} className="link-no-style">
-                <Img css={NSFWEnabled ? imgStyles : imgBlurredStyles} fluid={{ ...imgData, aspectRatio: 1 }} />
+                <Img css={(!blur && !nsfwVisible) ? imgStyles : imgBlurredStyles} fluid={{ ...imgData, aspectRatio: 1 }} />
               </Link>
             </div>
           </div>
@@ -140,8 +150,9 @@ const imgStyles = css`
 `
 
 const imgBlurredStyles = css`
-  filter: blur(2px);
-  -webkit-filter: blur(2px);
+  border-radius: 8px;
+  filter: blur(4px);
+  -webkit-filter: blur(4px);
 `
 
 const productTypeText = css`

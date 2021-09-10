@@ -402,6 +402,8 @@ const imgBlurredStyles = css`
   transition-duration: 300ms, 300ms, 300ms, 300ms;
   filter: blur(4px);
   -webkit-filter: blur(4px);
+  transform: translate3d(0,0,0);
+  transform: translateZ(0);
 `
 
 

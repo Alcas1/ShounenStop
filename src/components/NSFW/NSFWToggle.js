@@ -1,9 +1,12 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { css } from '@emotion/core'
-import { NSFWContext } from '../../utils/NSFWContext'
 
 const NSFWToggle = () => {
-  const { NSFWEnabled, handleToggleNSFW } = useContext(NSFWContext)
+  const [NSFWEnabled, setNSFWEnabled] = useState(false)
+
+  const handleToggleNSFW = () => {
+    setNSFWEnabled(!NSFWEnabled)
+  }
 
   return (
     <div css={NSFWToggleContainerStyle}>

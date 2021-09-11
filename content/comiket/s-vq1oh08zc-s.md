@@ -3,6 +3,7 @@ image: images/p2comictreasurewwddd.jpg
 producttype: Mini Sleeves
 eventId: c-1xqKj5UJA-c
 weight: 0
+nsfw: true
 pricings:
   - quantity: 1
     price: 47

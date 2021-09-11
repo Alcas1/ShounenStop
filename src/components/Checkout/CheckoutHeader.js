@@ -45,14 +45,14 @@ const backButton = css`
 const cartHeader = css`
   float: left;
   color: #0f346c;
-  font-size: 26px;
+  font-size: 30px;
   font-family: varela round;
 `
 const cartDivider = css`
   height: 1px;
   width: 100%;
-  margin-bottom: 10px;
-  background-color: #a1bce6;
+  margin-bottom: 5px;
+  // background-color: #a1bce6;
   clear: both;
 `
 

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { graphql, navigate } from 'gatsby'
 
 import { css } from '@emotion/core'
@@ -7,6 +7,7 @@ import ProductPageContainer from '../../components/Products/ProductPageContainer
 import FilterProductCategory from '../../components/Products/FilterProductCategory'
 import WeissProductCardNew from '../../components/Weiss/WeissProductCardNew'
 import NSFWToggle from '../../components/NSFW/NSFWToggle'
+import { NSFWContext } from '../../utils/NSFWContext'
 
 const lowestPrice = pricings => {
   return Math.min.apply(
@@ -24,6 +25,8 @@ const navigateSelected = (url, hash) => {
 }
 
 const Weiss = ({ data, location }) => {
+  const { NSFWEnabled } = useContext(NSFWContext)
+
   const weissProductData = data.weissProducts.edges
 
   var productTypeFilterList = ['All']
@@ -160,6 +163,7 @@ const Weiss = ({ data, location }) => {
                     key={edge.node.frontmatter.asin}
                     imgData={edge.node.frontmatter.image.childImageSharp.fluid}
                     url={'/products' + edge.node.fields.slug}
+                    blur={!NSFWEnabled}
                   />
                 )
               })}

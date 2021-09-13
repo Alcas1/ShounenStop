@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { graphql, navigate } from 'gatsby'
 
 import { css } from '@emotion/core'
@@ -7,6 +7,7 @@ import ProductPageContainer from '../../components/Products/ProductPageContainer
 import ComiketProductCard from '../../components/Comiket/ComiketProductCard'
 import FilterProductCategory from '../../components/Products/FilterProductCategory'
 import NSFWToggle from '../../components/NSFW/NSFWToggle'
+import { NSFWContext } from '../../utils/NSFWContext'
 
 const productTypeKey = 'producttype'
 const eventKey = 'event'
@@ -15,14 +16,7 @@ const navigateSelected = (url, hash) => {
 }
 
 const Comiket = ({ data, location }) => {
-  const [NSFWEnable, setNSFWEnable] = useState(() => {
-    return window.localStorage.getItem('NSFWEnabled') === 'true'
-  })
-
-  const handleToggleNSFW = () => {
-    setNSFWEnable(!NSFWEnable)
-    window.localStorage.setItem('NSFWEnabled', NSFWEnable.toString())
-  }
+  const { NSFWEnabled } = useContext(NSFWContext)
 
   const comiketProductData = data.comiketProducts.edges
   const comiketEventInfo = data.comiketEventInfo.edges
@@ -188,8 +182,7 @@ const Comiket = ({ data, location }) => {
             </div>
           </div>
           <div className="d-flex justify-content-end">
-          {/* <NSFWToggle /> */}
-          <button onClick={handleToggleNSFW}>Toggle NSFW</button>
+          <NSFWToggle />
           </div>
           <div className="row" css={productContentWrapper}>
             {comiketProductData
@@ -218,7 +211,7 @@ const Comiket = ({ data, location }) => {
                   url={'/products' + edge.node.fields.slug}
                   onsale={edge.node.frontmatter.onsale}
                   delay={iOS ? index/10 : index*25}
-                  blur={NSFWEnable}
+                  blur={!NSFWEnabled}
                 />
               ))}
           </div>

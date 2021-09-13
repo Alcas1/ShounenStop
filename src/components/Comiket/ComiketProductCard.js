@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'gatsby'
 import Img from 'gatsby-image'
 import { css } from '@emotion/core'
@@ -13,7 +13,7 @@ const ComiketProductCard = ({
   url,
   onsale,
   delay,
-  blur
+  blur,
 }) => {
   var initialVisible = false
   if (delay <= 0) {

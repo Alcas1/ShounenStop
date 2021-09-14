@@ -6,6 +6,7 @@ import { Container } from 'react-bootstrap'
 import ProductPageContainer from '../../components/Products/ProductPageContainer'
 import OtherProductCard from '../../components/Other/OtherProductCard'
 import FilterProductCategory from '../../components/Products/FilterProductCategory'
+import NSFWToggle from '../../components/NSFW/NSFWToggle'
 
 const productTypeKey = 'producttype'
 const seriesKey = 'event'
@@ -119,6 +120,7 @@ const Other = ({ data, location }) => {
         >
           <div css={productCategoryHeaderContainer}>
             <div css={productCategoryHeader}>Other Goods</div>
+            <NSFWToggle />
           </div>
           <div className="row" css={productContentWrapper}>
           {otherProductData
@@ -202,6 +204,9 @@ const productCategoryHeaderContainer = css`
   width: 100%;
   padding-left: 10px;
   padding-right: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 `
 
 const productPageContainer = css`

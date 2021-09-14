@@ -12,16 +12,19 @@ const ComiketProductCard = ({
   price,
   url,
   onsale,
-  delay
+  delay,
+  blur,
 }) => {
   var initialVisible = false
-  if(delay <= 0){
+  if (delay <= 0) {
     initialVisible = true;
   }
 
   const [visible, setVisible] = useState(initialVisible);
+  const [nsfwVisible, setNsfwVisible] = useState(false)
+
   useEffect(() => {
-    let timer = setTimeout(() =>{
+    let timer = setTimeout(() => {
       setVisible(true);
     }, delay);
 
@@ -29,6 +32,16 @@ const ComiketProductCard = ({
       clearTimeout(timer)
     }
   }, [delay]);
+
+  useEffect(() => {
+    let nsfwTimer = setTimeout(() => {
+      setNsfwVisible(blur);
+    }, delay)
+
+    return () => {
+      clearTimeout(nsfwTimer)
+    }
+  }, [blur]);
 
   return (
     visible &&
@@ -57,7 +70,7 @@ const ComiketProductCard = ({
                 </div>}
               </div>
               <Link to={url} className="link-no-style">
-                <Img css={imgStyles} fluid={{ ...imgData, aspectRatio: 1 }} />
+                <Img css={(!blur && !nsfwVisible) ? imgStyles : imgBlurredStyles} fluid={{ ...imgData, aspectRatio: 1 }} />
               </Link>
             </div>
           </div>
@@ -134,6 +147,12 @@ const imgContainer = css`
 
 const imgStyles = css`
   border-radius: 8px;
+`
+
+const imgBlurredStyles = css`
+  border-radius: 8px;
+  filter: blur(4px);
+  -webkit-filter: blur(4px);
 `
 
 const productTypeText = css`

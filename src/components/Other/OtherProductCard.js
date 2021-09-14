@@ -1,8 +1,9 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { useStaticQuery, graphql, Link } from 'gatsby'
 import Img from 'gatsby-image'
 import { css } from '@emotion/core'
 import ContextConsumer from '../LayoutItems/CartContext'
+import { NSFWContext } from '../../utils/NSFWContext'
 
 const OtherProductCard = ({
   imgData,
@@ -12,6 +13,8 @@ const OtherProductCard = ({
   price,
   url,
 }) => {
+  const { NSFWEnabled } = useContext(NSFWContext)
+
   return (
     <ContextConsumer>
       {({ addQuantityToCart }) => (
@@ -41,7 +44,7 @@ const OtherProductCard = ({
                 </div>
               </div>
               <Link to={url} className="link-no-style">
-                <Img css={imgStyles} fluid={{ ...imgData, aspectRatio: 0.7 }} />
+                <Img css={NSFWEnabled ? imgStyles : imgBlurredStyles} fluid={{ ...imgData, aspectRatio: 0.7 }} />
               </Link>
             </div>
           </div>
@@ -174,6 +177,12 @@ const imgContainer = css`
 
 const imgStyles = css`
   border-radius: 6px;
+`
+
+const imgBlurredStyles = css`
+  border-radius: 6px;
+  filter: blur(2px);
+  -webkit-filter: blur(2px);
 `
 
 const cardBottom = css`

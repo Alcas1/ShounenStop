@@ -9,6 +9,7 @@ import ShopNavbar from './ShopNavbar'
 import LayoutFooter from './LayoutFooter'
 import 'react-toastify/dist/ReactToastify.min.css'
 import BottomBanner from './BottomBanner'
+import { NSFWContextProvider } from '../../utils/NSFWContext'
 
 class Layout extends React.Component {
   constructor(props) {
@@ -36,31 +37,33 @@ class Layout extends React.Component {
           }
         `}
         render={data => (
-          <CartContext>
-            <ToastContainer
-              closeButton={false}
-              closeOnClick
-              onClick={() => {
-                window.location.pathname !== '/cart' && navigate('/cart')
-              }}
-              transition={Slide}
-              limit={3}
-              css={toastStyles}
-              rtl
-            />
-            <ShopNavbar
-              pageInfo={this.props.pageInfo}
-              title={data.site.siteMetadata.title}
-            />
-            <div
-              css={mainContainerStyles}
-              className="mainContainer"
-            >
-              {this.props.children}
-            </div>
-            <LayoutFooter />
-            <BottomBanner />
-          </CartContext>
+          <NSFWContextProvider>
+            <CartContext>
+              <ToastContainer
+                closeButton={false}
+                closeOnClick
+                onClick={() => {
+                  window.location.pathname !== '/cart' && navigate('/cart')
+                }}
+                transition={Slide}
+                limit={3}
+                css={toastStyles}
+                rtl
+              />
+              <ShopNavbar
+                pageInfo={this.props.pageInfo}
+                title={data.site.siteMetadata.title}
+              />
+              <div
+                css={mainContainerStyles}
+                className="mainContainer"
+              >
+                {this.props.children}
+              </div>
+              <LayoutFooter />
+              <BottomBanner />
+            </CartContext>
+          </NSFWContextProvider>
         )}
       />
     )

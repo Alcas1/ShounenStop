@@ -1,0 +1,3 @@
+- Host fonts locally to speed up site?
+- Is the only thing using Socket.io SendGrid? Can't just use fetch() or axios to post?
+- 

@@ -19,7 +19,6 @@ const ComiketProductCard = ({
   if (delay <= 0) {
     initialVisible = true;
   }
-
   const [visible, setVisible] = useState(initialVisible);
   const [nsfwVisible, setNsfwVisible] = useState(false)
 

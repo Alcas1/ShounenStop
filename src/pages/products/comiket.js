@@ -22,7 +22,6 @@ const Comiket = ({ data, location }) => {
   const comiketEventInfo = data.comiketEventInfo.edges
     .sort((a, b) => (a.node.frontmatter.currentEvent === true ? -1 : 1))
     .slice()
-
   const [iOS, setiOS] = React.useState(false);
 
   var currentEventKey = ''
@@ -193,12 +192,14 @@ const Comiket = ({ data, location }) => {
               })
               .filter(edge => {
                 return currentEventFilterListItem !== ''
-                  ? edge.node.frontmatter.eventName ===
-                      currentEventFilterListItem
+                  ? edge.node.frontmatter.eventName === currentEventFilterListItem
                   : true
               })
               .sort((a, b) => {
                 return a.node.frontmatter.onsale === true ? -1 : 1
+              })
+              .sort((a, b) => {
+                return (!NSFWEnabled && a.node.frontmatter.nsfw) === true ? 1 : -1
               })
               .map((edge, index) => (
                 <ComiketProductCard
@@ -211,7 +212,7 @@ const Comiket = ({ data, location }) => {
                   url={'/products' + edge.node.fields.slug}
                   onsale={edge.node.frontmatter.onsale}
                   delay={iOS ? index/10 : index*25}
-                  blur={!NSFWEnabled}
+                  blur={!NSFWEnabled && edge.node.frontmatter.nsfw}
                 />
               ))}
           </div>
@@ -329,6 +330,7 @@ export const ComiketProductCategoryQuery = graphql`
             asin
             producttype
             eventId
+            nsfw
             onsale
             image {
               childImageSharp {

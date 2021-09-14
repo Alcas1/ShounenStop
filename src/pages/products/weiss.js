@@ -163,7 +163,7 @@ const Weiss = ({ data, location }) => {
                     key={edge.node.frontmatter.asin}
                     imgData={edge.node.frontmatter.image.childImageSharp.fluid}
                     url={'/products' + edge.node.fields.slug}
-                    blur={!NSFWEnabled}
+                    blur={false}
                   />
                 )
               })}

@@ -9,7 +9,7 @@ const NSFWToggle = () => {
   return (
     <>
       <div css={NSFWToggleContainerStyle}>
-        <div css={NSFWToggleLabelStyle} onClick={() => setModalVisible(true)}>Enable NSFW</div>
+        <div css={NSFWToggleLabelStyle} onClick={() => setModalVisible(true)}>{NSFWEnabled ? 'Disable NSFW' : 'Enable NSFW'}</div>
       </div>
       {
         modalVisible &&
@@ -62,12 +62,17 @@ const NSFWConfirmButtonStyle = css`
 `
 
 const NSFWToggleContainerStyle = css`
-  background: black;
-  color: white;
+  background-color: #dcecff;
+  color: #0f346c;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 8px 16px;
+  border-radius:12px;
+  font-family: 'lato';
+  border: solid 2px #0f346c;
+  box-shadow: 0px 2px 8px 0px rgba(31,32,68,0.16);
+  cursor: pointer;
 `
 
 const NSFWToggleLabelStyle = css`

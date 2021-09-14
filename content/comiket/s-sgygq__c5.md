@@ -2,6 +2,7 @@
 image: images/zenbhtsxvgaaox3a.jpg
 producttype: Sleeves
 eventId: 1mYu6cGMR
+nsfw: true
 pricings:
   - quantity: 1
     price: 25

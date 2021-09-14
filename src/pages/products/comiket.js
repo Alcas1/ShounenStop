@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { graphql, navigate } from 'gatsby'
 
 import { css } from '@emotion/core'
@@ -6,6 +6,8 @@ import { Container } from 'react-bootstrap'
 import ProductPageContainer from '../../components/Products/ProductPageContainer'
 import ComiketProductCard from '../../components/Comiket/ComiketProductCard'
 import FilterProductCategory from '../../components/Products/FilterProductCategory'
+import NSFWToggle from '../../components/NSFW/NSFWToggle'
+import { NSFWContext } from '../../utils/NSFWContext'
 
 const productTypeKey = 'producttype'
 const eventKey = 'event'
@@ -14,6 +16,8 @@ const navigateSelected = (url, hash) => {
 }
 
 const Comiket = ({ data, location }) => {
+  const { NSFWEnabled } = useContext(NSFWContext)
+
   const comiketProductData = data.comiketProducts.edges
   const comiketEventInfo = data.comiketEventInfo.edges
     .sort((a, b) => (a.node.frontmatter.currentEvent === true ? -1 : 1))
@@ -177,6 +181,9 @@ const Comiket = ({ data, location }) => {
               {eventFilterMap[currentEventFilterListItem].eventDesc}
             </div>
           </div>
+          <div className="d-flex justify-content-end">
+          <NSFWToggle />
+          </div>
           <div className="row" css={productContentWrapper}>
             {comiketProductData
               .filter(edge => {
@@ -204,6 +211,7 @@ const Comiket = ({ data, location }) => {
                   url={'/products' + edge.node.fields.slug}
                   onsale={edge.node.frontmatter.onsale}
                   delay={iOS ? index/10 : index*25}
+                  blur={!NSFWEnabled}
                 />
               ))}
           </div>

@@ -13,6 +13,7 @@ const WeissProductCardNew = ({
   preorder,
   lowPrice,
   url,
+  blur,
 }) => {
   const nameText = css`
     position: relative;
@@ -50,7 +51,7 @@ const WeissProductCardNew = ({
                 </div>
               </div>
               <Link to={url} className="link-no-style">
-                <Img css={imgStyles} fluid={{ ...imgData, aspectRatio: 0.7 }} />
+                <Img css={blur ? imgBlurredStyles : imgStyles} fluid={{ ...imgData, aspectRatio: 0.7 }} />
               </Link>
             </div>
           </div>
@@ -170,6 +171,12 @@ const imgContainer = css`
 
 const imgStyles = css`
   border-radius: 6px;
+`
+
+const imgBlurredStyles = css`
+  border-radius: 6px;
+  filter: blur(4px);
+  -webkit-filter: blur(4px);
 `
 
 const cardStatus = css`

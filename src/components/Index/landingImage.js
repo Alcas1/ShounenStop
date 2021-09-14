@@ -17,7 +17,7 @@ const LandingImage = ({ landingImageData, landingText, landingSubtitle }) => {
           <div css={lineBreakSm}></div>
           <span css={shippingText}>{landingSubtitle}</span>
         </div>
-        <div css={lineBreakLg}></div>
+        <div css={lineBreakSm}></div>
         <Link to="/products/weiss">
           <div css={shopNow}>
             <span>EXPLORE NOW</span>
@@ -29,10 +29,10 @@ const LandingImage = ({ landingImageData, landingText, landingSubtitle }) => {
 }
 
 const landingStyles = css`
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 10, 20, 0.85);
   width: 100%;
   opacity: 1 !important;
-  height: 500px;
+  height: 420px;
   display: flex;
   text-align: center;
   align-items: center;
@@ -41,8 +41,10 @@ const landingStyles = css`
 `
 
 const landingTextStyles = css`
-  width: 85%;
-  font-size: 25px;
+  padding: 15px;
+  max-width: 640px;
+  font-size: 1.8rem;
+  font-weight: bold;
   color: #fff;
 `
 
@@ -53,11 +55,12 @@ const shippingText = css`
 `
 
 const shopNow = css`
-  font-size: 22px;
+  font-size: 1.25rem;
   letter-spacing: 2px;
-  width: 240px;
-  height: 80px;
-  border: solid 1px #fff;
+  padding: 15px 30px;
+  background: deepskyblue;
+  font-weight: bold;
+  box-shadow: 0 2px 16px -4px deepskyblue;
   display: flex;
   color: #fff;
   text-align: center;
@@ -70,16 +73,12 @@ const shopNow = css`
   transition-duration: 300ms, 300ms, 300ms, 300ms;
 
   &:hover, &:active{
-    font-size: 24px;
     background-color: #fff;
     color: #000;
-    width: 260px;
-    height: 90px;
   }
 `
 
 const landingSection = css`
-  margin-top: 120px;
   max-width: 800px;
   display: flex;
   align-items: center;

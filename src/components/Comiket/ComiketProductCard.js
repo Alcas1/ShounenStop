@@ -49,33 +49,43 @@ const ComiketProductCard = ({
         <div css={cardPadding} className={`fadeItem row-card ${(blur && nsfwVisible) ? 'disabled-link no-select no-drag' : ''}`}>
           <div css={cardContainer}>
             <div css={imgContainer}>
-              <div css={imgCover}>
-                <div css={productTypeText}>{productType}</div>
-                <div css={priceText}>{'$' + price}</div>
-                {onsale && <div
-                  onClick={() => {
-                    addQuantityToCart(
-                      asin,
-                      eventName + ' ' + productType,
-                      productType,
-                      imgData,
-                      1,
-                      1
-                    )
-                  }}
-                  css={addToCartButton}
-                >
-                  +
-                </div>}
-              </div>
+              {
+                (!blur && !nsfwVisible) &&
+                <div css={imgCover}>
+                  <div css={productTypeText}>{productType}</div>
+                  <div css={priceText}>{'$' + price}</div>
+                  {onsale && <div
+                    onClick={() => {
+                      addQuantityToCart(
+                        asin,
+                        eventName + ' ' + productType,
+                        productType,
+                        imgData,
+                        1,
+                        1
+                      )
+                    }}
+                    css={addToCartButton}
+                  >
+                    +
+                  </div>}
+                </div>
+              }
               <Link to={url} className="link-no-style">
                 {
-                  (blur && nsfwVisible) && 
-                  <div css={imgNSFWOverlay} onClick={() => alert()}>
-                    <span css={imgNSFWOverlayText}>18+ Content</span>
-                  </div>
+                  (blur && nsfwVisible)
+                  ? (
+                    <>
+                      <div css={imgNSFWOverlay}>
+                        <span css={imgNSFWOverlayText}>18+ Content</span>
+                      </div>
+                      <Img css={imgBlurredStyles} fluid={{ base64: imgData.base64, aspectRatio: 1 }} />
+                    </>
+                  )
+                  : (
+                    <Img css={imgStyles} fluid={{ ...imgData, aspectRatio: 1 }} />
+                  )
                 }
-                <Img css={imgStyles} fluid={{ ...imgData, aspectRatio: 1 }} />
               </Link>
             </div>
           </div>
@@ -152,6 +162,11 @@ const imgContainer = css`
 
 const imgStyles = css`
   border-radius: 8px;
+`
+
+const imgBlurredStyles = css`
+  border-radius: 8px;
+  image-rendering: pixelated;
 `
 
 const imgNSFWOverlay = css`

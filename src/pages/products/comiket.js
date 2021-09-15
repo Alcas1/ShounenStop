@@ -8,6 +8,7 @@ import ComiketProductCard from '../../components/Comiket/ComiketProductCard'
 import FilterProductCategory from '../../components/Products/FilterProductCategory'
 import NSFWToggle from '../../components/NSFW/NSFWToggle'
 import { NSFWContext } from '../../utils/NSFWContext'
+import { window } from 'browser-monads';
 
 const productTypeKey = 'producttype'
 const eventKey = 'event'

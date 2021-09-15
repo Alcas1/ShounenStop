@@ -189,8 +189,10 @@ const imgNSFWOverlay = css`
   z-index: 1;
   width: 100%;
   height: 100%;
+  image-rendering: pixelated;
   background: rgba(0,20,40,.75);
-  backdrop-filter: blur(3px);
+  backdrop-filter: blur(10px);
+  opacity:1;
   border-radius: 8px;
   justify-content: center;
   align-items: center;

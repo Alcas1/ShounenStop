@@ -8,26 +8,30 @@ const NSFWToggle = () => {
 
   return (
     <>
-      <div css={NSFWToggleContainerStyle}>
-        <div css={NSFWToggleLabelStyle} onClick={() => setModalVisible(true)}>{NSFWEnabled ? 'Disable NSFW' : 'Enable NSFW'}</div>
+      <div css={NSFWToggleContainerStyle} onClick={() => setModalVisible(true)}>
+        <div css={NSFWToggleLabelStyle} >{NSFWEnabled ? 'Disable NSFW' : 'Enable NSFW'}</div>
       </div>
       {
         modalVisible &&
         <div css={NSFWModalContainerStyle}>
           <div css={NSFWModalContainerOverlayStyle} onClick={() => setModalVisible(false)}></div>
           <div className='animated animatedFadeInUp fadeInUp' css={NSFWModalStyle}>
-            <button onClick={() => setModalVisible(false)}>Hide Modal</button>
+            <div css={NSFWModalUpper}>
+              <p>//FIX: Needs tightening up</p> 
+              {
+                NSFWEnabled
+                ? <p>Disable explicit content on ShounenStop?</p>
+                : <p>If you are over 18 years of age and wish to see explicit content, click "Enable NSFW"</p>
+              }
 
-            {
-              NSFWEnabled
-              ? <p>Disable explicit content on ShounenStop?</p>
-              : <p>If you are over 18 years of age and wish to see explicit content, click "Enable NSFW"</p>
-            }
-
+            </div>
+            <div css={NSFWModalLower}>
+            <button css={NSFWCancelButtonStyle} onClick={() => setModalVisible(false)}>Hide Modal</button>
             <button css={NSFWConfirmButtonStyle} onClick={() => {
-              setModalVisible(false)
-              handleToggleNSFW()
-            }}>{NSFWEnabled ? 'Disable NSFW' : 'Enable NSFW'}</button>
+                setModalVisible(false)
+                handleToggleNSFW()
+              }}>{NSFWEnabled ? 'Disable NSFW' : 'Enable NSFW'}</button>
+            </div>
           </div>
         </div>
       }
@@ -56,16 +60,60 @@ const NSFWModalContainerOverlayStyle = css`
 `
 
 const NSFWModalStyle = css`
+  max-width: 400px;
+  margin:16px;
   background: white;
-  padding: 16px;
-  border-radius: 4px;
-  box-shadow: 0 4px 160px -2px black;
+  border-radius: 12px;
+  box-shadow: 0 4px 160px -2px rgba(0,10,20,.5);
+`
+
+
+const NSFWModalUpper = css`
+  width:100%;
+  height:150px;
+  background:white;
+  border-top-right-radius:12px;
+  border-top-left-radius:12px;
+  padding:15px;
+`
+
+
+const NSFWModalLower = css`
+  width:100%;
+  height:80px;
+  // background:rgb(249, 250, 251);
+  border-bottom-right-radius:12px;
+  border-bottom-left-radius:12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding:10px;
+`
+
+const NSFWCancelButtonStyle = css`
+  color: #000;
+  font-family:lato;
+  background-color: rgb(243, 244, 246);
+  border-radius: 8px;
+  border:none;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: 35px;
+  padding-right: 35px;
+  margin-right:10px;
 `
 
 const NSFWConfirmButtonStyle = css`
-  background: deepskyblue;
-  color: white;
-  border-radius: 64px;
+  color: #dcecff;
+  font-family:lato;
+  background-color: #0f346c;
+  border-radius: 8px;
+  border:none;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: 35px;
+  padding-right: 35px;
+  margin-left:10px;
 `
 
 const NSFWToggleContainerStyle = css`

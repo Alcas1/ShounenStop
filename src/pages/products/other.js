@@ -252,6 +252,7 @@ export const OtherProductCategoryQuery = graphql`
             asin
             producttype
             name
+            nsfw
             series
             shippingFrom
             ebayLink

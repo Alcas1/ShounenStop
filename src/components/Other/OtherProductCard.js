@@ -3,7 +3,6 @@ import { useStaticQuery, graphql, Link } from 'gatsby'
 import Img from 'gatsby-image'
 import { css } from '@emotion/core'
 import ContextConsumer from '../LayoutItems/CartContext'
-import { NSFWContext } from '../../utils/NSFWContext'
 
 const OtherProductCard = ({
   imgData,
@@ -12,13 +11,12 @@ const OtherProductCard = ({
   productType,
   price,
   url,
+  blur,
 }) => {
-  const { NSFWEnabled } = useContext(NSFWContext)
-
   return (
     <ContextConsumer>
       {({ addQuantityToCart }) => (
-        <div css={cardPadding} className="row-card fadeItem">
+        <div css={cardPadding} className={`row-card fadeItem ${ blur ? 'disabled-link no-select no-drag' : ''}`}>
           <div css={cardContainer}>
             <div css={imgContainer}>
               <div css={imgCover}>
@@ -44,7 +42,13 @@ const OtherProductCard = ({
                 </div>
               </div>
               <Link to={url} className="link-no-style">
-                <Img css={NSFWEnabled ? imgStyles : imgBlurredStyles} fluid={{ ...imgData, aspectRatio: 0.7 }} />
+                {
+                  (blur) && 
+                  <div css={imgNSFWOverlay}>
+                    <span css={imgNSFWOverlayText}>18+ Content</span>
+                  </div>
+                }
+                <Img css={imgStyles} fluid={{ ...imgData, aspectRatio: 0.7 }} />
               </Link>
             </div>
           </div>
@@ -179,10 +183,21 @@ const imgStyles = css`
   border-radius: 6px;
 `
 
-const imgBlurredStyles = css`
-  border-radius: 6px;
-  filter: blur(2px);
-  -webkit-filter: blur(2px);
+const imgNSFWOverlay = css`
+  display: flex;
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,20,40,.75);
+  backdrop-filter: blur(3px);
+  border-radius: 8px;
+  justify-content: center;
+  align-items: center;
+`
+
+const imgNSFWOverlayText = css`
+  color: white;
 `
 
 const cardBottom = css`

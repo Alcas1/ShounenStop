@@ -46,7 +46,7 @@ const ComiketProductCard = ({
     visible &&
     <ContextConsumer>
       {({ addQuantityToCart }) => (
-        <div css={cardPadding} className="fadeItem row-card">
+        <div css={cardPadding} className={`fadeItem row-card ${(blur && nsfwVisible) ? 'disabled-link no-select' : ''}`}>
           <div css={cardContainer}>
             <div css={imgContainer}>
               <div css={imgCover}>
@@ -69,7 +69,13 @@ const ComiketProductCard = ({
                 </div>}
               </div>
               <Link to={url} className="link-no-style">
-                <Img css={(!blur && !nsfwVisible) ? imgStyles : imgBlurredStyles} fluid={{ ...imgData, aspectRatio: 1 }} />
+                {
+                  (blur && nsfwVisible) && 
+                  <div css={imgNSFWOverlay} onClick={() => alert()}>
+                    <span css={imgNSFWOverlayText}>18+ Content</span>
+                  </div>
+                }
+                <Img css={imgStyles} fluid={{ ...imgData, aspectRatio: 1 }} />
               </Link>
             </div>
           </div>
@@ -148,10 +154,21 @@ const imgStyles = css`
   border-radius: 8px;
 `
 
-const imgBlurredStyles = css`
+const imgNSFWOverlay = css`
+  display: flex;
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,20,40,.75);
+  backdrop-filter: blur(3px);
   border-radius: 8px;
-  filter: blur(4px);
-  -webkit-filter: blur(4px);
+  justify-content: center;
+  align-items: center;
+`
+
+const imgNSFWOverlayText = css`
+  color: white;
 `
 
 const productTypeText = css`

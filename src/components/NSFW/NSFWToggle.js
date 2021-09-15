@@ -14,7 +14,8 @@ const NSFWToggle = () => {
       {
         modalVisible &&
         <div css={NSFWModalContainerStyle}>
-          <div css={NSFWModalStyle}>
+          <div css={NSFWModalContainerOverlayStyle} onClick={() => setModalVisible(false)}></div>
+          <div className='animated animatedFadeInUp fadeInUp' css={NSFWModalStyle}>
             <button onClick={() => setModalVisible(false)}>Hide Modal</button>
 
             {
@@ -43,9 +44,15 @@ const NSFWModalContainerStyle = css`
   display: flex;
   justify-content: center;
   align-items: center;
+  backdrop-filter: blur(3px);
+  z-index: 9999;
+`
+
+const NSFWModalContainerOverlayStyle = css`
+  position: absolute;
+  height: 100%;
+  width: 100%;
   background: rgba(0,10,20,0.25);
-  backdrop-filter: blur(4px);
-  z-index: 99;
 `
 
 const NSFWModalStyle = css`

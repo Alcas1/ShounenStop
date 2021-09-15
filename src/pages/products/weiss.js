@@ -265,6 +265,7 @@ export const WeissProductCategoryQuery = graphql`
             displayName
             producttype
             series
+            nsfw
             color
             image {
               childImageSharp {

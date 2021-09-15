@@ -4,6 +4,7 @@ import { ToastContainer, Slide } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import { CartContext } from './CartContext'
 import { css } from '@emotion/core'
+import { window } from 'browser-monads';
 
 import ShopNavbar from './ShopNavbar'
 import LayoutFooter from './LayoutFooter'

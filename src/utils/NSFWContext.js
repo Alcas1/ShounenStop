@@ -1,8 +1,10 @@
 import React, { createContext, useState } from "react";
+import { window } from 'browser-monads';
 
 export const NSFWContext = createContext({})
 
 export const NSFWContextProvider = ({ children }) => {
+  
   let [NSFWEnabled, setNSFWEnabled] = useState(() => {
     return window.localStorage.getItem('NSFWEnabled') === 'true'
   })

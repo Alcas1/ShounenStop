@@ -1,6 +1,7 @@
 import React from 'react'
 import { css } from '@emotion/core'
 import { Collapse } from 'react-bootstrap'
+import { window } from 'browser-monads';
 
 class FilterProductCategory extends React.Component {
   constructor(props) {

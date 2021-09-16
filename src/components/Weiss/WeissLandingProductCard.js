@@ -20,6 +20,7 @@ const WeissLandingProductCard = ({
   lowPrice,
   color,
   url,
+  blur,
 }) => {
   const { NSFWEnabled } = useContext(NSFWContext)
 
@@ -179,7 +180,7 @@ const WeissLandingProductCard = ({
           <div css={cardContainer} className="fadeItem">
             <Link to={url} className="link-no-style">
               <div css={imgContainer}>
-                <Img css={NSFWEnabled ? imgStyles : imgBlurredStyles} fluid={{ ...imgData, aspectRatio: 1 }} />
+                <Img css={imgStyles} fluid={{ ...imgData, aspectRatio: 1 }} />
               </div>
             </Link>
             <div className="cardBottom" css={cardBottom}>

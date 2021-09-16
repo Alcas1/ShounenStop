@@ -46,11 +46,11 @@ const ComiketProductCard = ({
     visible &&
     <ContextConsumer>
       {({ addQuantityToCart }) => (
-        <div css={cardPadding} className={`fadeItem row-card ${(blur && nsfwVisible) ? 'disabled-link no-select no-drag' : ''}`}>
+        <div css={cardPadding} className='fadeItem row-card'>
           <div css={cardContainer}>
             <div css={imgContainer}>
               {
-                (!blur && !nsfwVisible) &&
+                !nsfwVisible &&
                 <div css={imgCover}>
                   <div css={productTypeText}>{productType}</div>
                   <div css={priceText}>{'$' + price}</div>
@@ -71,9 +71,9 @@ const ComiketProductCard = ({
                   </div>}
                 </div>
               }
-              <Link to={url} className="link-no-style">
+              <Link to={url} className={`link-no-style ${nsfwVisible ? 'disabled-link no-select no-drag' : ''}`}>
                 {
-                  (blur && nsfwVisible)
+                  nsfwVisible
                   ? (
                     <>
                       <div css={imgNSFWOverlay}>

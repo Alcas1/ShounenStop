@@ -43,14 +43,17 @@ const WeissProductCardNew = ({
           <div css={cardStatus}>{preorder !== null ? preorder : ''}</div>
           <div css={cardContainer}>
             <div css={imgContainer}>
-              <div css={imgCover}>
-                <div css={cardBottom}>
-                  <div css={nameText}>{displayName}</div>
-                  <div css={priceText}>{'From $' + lowPrice.toFixed(2)}</div>
-                  <div css={productTypeText}>{productType}</div>
+              { 
+                (!blur) && 
+                <div css={imgCover}>
+                  <div css={cardBottom}>
+                    <div css={nameText}>{displayName}</div>
+                    <div css={priceText}>{'From $' + lowPrice.toFixed(2)}</div>
+                    <div css={productTypeText}>{productType}</div>
+                  </div>
                 </div>
-              </div>
-              <Link to={url} className="link-no-style">
+              }
+              <Link to={url} className={`link-no-style ${ blur ? 'disabled-link no-select no-drag' : ''}`}>
                 {
                   (blur) && 
                   <div css={imgNSFWOverlay}>

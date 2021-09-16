@@ -19,28 +19,31 @@ const OtherProductCard = ({
         <div css={cardPadding} className={`row-card fadeItem ${ blur ? 'disabled-link no-select no-drag' : ''}`}>
           <div css={cardContainer}>
             <div css={imgContainer}>
-              <div css={imgCover}>
-                <div css={cardBottom}>
-                  <div css={nameText}>{name}</div>
-                  <div css={priceText}>{'$' + price}</div>
-                  <div css={productTypeText}>{productType}</div>
-                  <div
-                  onClick={() => {
-                    addQuantityToCart(
-                      asin,
-                      name,
-                      productType,
-                      imgData,
-                      1,
-                      1
-                    )
-                  }}
-                  css={addToCartButton}
-                >
-                  +
+              {
+                (!blur) &&
+                <div css={imgCover}>
+                  <div css={cardBottom}>
+                    <div css={nameText}>{name}</div>
+                    <div css={priceText}>{'$' + price}</div>
+                    <div css={productTypeText}>{productType}</div>
+                    <div
+                    onClick={() => {
+                      addQuantityToCart(
+                        asin,
+                        name,
+                        productType,
+                        imgData,
+                        1,
+                        1
+                      )
+                    }}
+                    css={addToCartButton}
+                  >
+                    +
+                  </div>
+                  </div>
                 </div>
-                </div>
-              </div>
+              }
               <Link to={url} className="link-no-style">
                 {
                   (blur) && 

@@ -12,6 +12,7 @@ export const NSFWContextProvider = ({ children }) => {
   const handleToggleNSFW = () => {
     window.localStorage.setItem('NSFWEnabled', NSFWEnabled ? 'false' : 'true');
     setNSFWEnabled(!NSFWEnabled)
+    return NSFWEnabled
   }
 
   return (

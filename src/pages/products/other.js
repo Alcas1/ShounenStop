@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import { graphql, navigate } from 'gatsby'
 
 import { css } from '@emotion/core'
@@ -6,6 +6,8 @@ import { Container } from 'react-bootstrap'
 import ProductPageContainer from '../../components/Products/ProductPageContainer'
 import OtherProductCard from '../../components/Other/OtherProductCard'
 import FilterProductCategory from '../../components/Products/FilterProductCategory'
+import NSFWToggle from '../../components/NSFW/NSFWToggle'
+import { NSFWContext } from '../../utils/NSFWContext'
 
 const productTypeKey = 'producttype'
 const seriesKey = 'event'
@@ -14,6 +16,8 @@ const navigateSelected = (url, hash) => {
 }
 
 const Other = ({ data, location }) => {
+  let { NSFWEnabled } = useContext(NSFWContext)
+
   const otherProductData = data.otherProducts.edges
   var productTypeFilterList = ['All']
   otherProductData.map(edge => {
@@ -119,6 +123,7 @@ const Other = ({ data, location }) => {
         >
           <div css={productCategoryHeaderContainer}>
             <div css={productCategoryHeader}>Other Goods</div>
+            <NSFWToggle />
           </div>
           <div className="row" css={productContentWrapper}>
           {otherProductData
@@ -133,6 +138,9 @@ const Other = ({ data, location }) => {
                   : true
               })
               .map(edge => {
+                console.log(`Image Name: ${edge.node.frontmatter.name}`)
+                console.log(`%cNSFW Image: ${edge.node.frontmatter.nsfw}`, "color: red")
+                console.log(`%cNSFW Enabled: ${NSFWEnabled}`, "color: red")
                 return (
                   <OtherProductCard
                     name={edge.node.frontmatter.name}
@@ -143,6 +151,7 @@ const Other = ({ data, location }) => {
                     key={edge.node.frontmatter.asin}
                     imgData={edge.node.frontmatter.image.childImageSharp.fluid}
                     url={'/products' + edge.node.fields.slug}
+                    blur={!NSFWEnabled && edge.node.frontmatter.nsfw}
                   />
                 )
               })}
@@ -202,6 +211,9 @@ const productCategoryHeaderContainer = css`
   width: 100%;
   padding-left: 10px;
   padding-right: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 `
 
 const productPageContainer = css`
@@ -240,6 +252,7 @@ export const OtherProductCategoryQuery = graphql`
             asin
             producttype
             name
+            nsfw
             series
             shippingFrom
             ebayLink

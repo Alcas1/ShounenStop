@@ -12,6 +12,7 @@
     "@sendgrid/mail": "^7.2.0",
     "axios": "^0.19.2",
     "bootstrap": "^4.5.0",
+    "browser-monads": "^1.0.0",
     "codemirror": "^5.54.0",
     "formik": "^2.1.4",
     "gatsby": "^2.22.12",

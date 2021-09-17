@@ -10,7 +10,7 @@ const Products = () => {
   return (
     <>
       <SEO title="Shop" />
-      <ProductPageContainer/>
+      <ProductPageContainer />
     </>
   )
 }

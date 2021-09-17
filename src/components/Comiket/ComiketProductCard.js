@@ -12,16 +12,18 @@ const ComiketProductCard = ({
   price,
   url,
   onsale,
-  delay
+  delay,
+  blur,
 }) => {
   var initialVisible = false
-  if(delay <= 0){
+  if (delay <= 0) {
     initialVisible = true;
   }
-
   const [visible, setVisible] = useState(initialVisible);
+  const [nsfwVisible, setNsfwVisible] = useState(false)
+
   useEffect(() => {
-    let timer = setTimeout(() =>{
+    let timer = setTimeout(() => {
       setVisible(true);
     }, delay);
 
@@ -30,34 +32,60 @@ const ComiketProductCard = ({
     }
   }, [delay]);
 
+  useEffect(() => {
+    let nsfwTimer = setTimeout(() => {
+      setNsfwVisible(blur);
+    }, delay)
+
+    return () => {
+      clearTimeout(nsfwTimer)
+    }
+  }, [blur]);
+
   return (
     visible &&
     <ContextConsumer>
       {({ addQuantityToCart }) => (
-        <div css={cardPadding} className="fadeItem row-card">
+        <div css={cardPadding} className='fadeItem row-card'>
           <div css={cardContainer}>
             <div css={imgContainer}>
-              <div css={imgCover}>
-                <div css={productTypeText}>{productType}</div>
-                <div css={priceText}>{'$' + price}</div>
-                {onsale && <div
-                  onClick={() => {
-                    addQuantityToCart(
-                      asin,
-                      eventName + ' ' + productType,
-                      productType,
-                      imgData,
-                      1,
-                      1
-                    )
-                  }}
-                  css={addToCartButton}
-                >
-                  +
-                </div>}
-              </div>
-              <Link to={url} className="link-no-style">
-                <Img css={imgStyles} fluid={{ ...imgData, aspectRatio: 1 }} />
+              {
+                !nsfwVisible &&
+                <div css={imgCover}>
+                  <div css={productTypeText}>{productType}</div>
+                  <div css={priceText}>{'$' + price}</div>
+                  {onsale && <div
+                    onClick={() => {
+                      addQuantityToCart(
+                        asin,
+                        eventName + ' ' + productType,
+                        productType,
+                        imgData,
+                        1,
+                        1
+                      )
+                    }}
+                    css={addToCartButton}
+                  >
+                    +
+                  </div>}
+                </div>
+              }
+              <Link to={url} className={`link-no-style ${nsfwVisible ? 'disabled-link no-select no-drag' : ''}`}>
+                {
+                  nsfwVisible
+                  ? (
+                    <>
+                      <div css={imgNSFWOverlay}>
+                        <span css={imgNSFWOverlayText}>18+ Content</span>
+                      </div>
+                      <Img css={imgBlurredStyles} fluid={{ base64: imgData.base64, aspectRatio: 1 }} />
+                    </>
+                  )
+                  : (
+                    <Img css={imgStyles} fluid={{ ...imgData, aspectRatio: 1 }} />
+                  )
+                }
               </Link>
             </div>
           </div>
@@ -134,6 +162,28 @@ const imgContainer = css`
 
 const imgStyles = css`
   border-radius: 8px;
+`
+
+const imgBlurredStyles = css`
+  border-radius: 8px;
+  image-rendering: pixelated;
+`
+
+const imgNSFWOverlay = css`
+  display: flex;
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,20,40,.75);
+  backdrop-filter: blur(3px);
+  border-radius: 8px;
+  justify-content: center;
+  align-items: center;
+`
+
+const imgNSFWOverlayText = css`
+  color: white;
 `
 
 const productTypeText = css`

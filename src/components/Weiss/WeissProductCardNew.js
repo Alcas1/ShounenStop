@@ -13,6 +13,7 @@ const WeissProductCardNew = ({
   preorder,
   lowPrice,
   url,
+  blur,
 }) => {
   const nameText = css`
     position: relative;
@@ -38,18 +39,27 @@ const WeissProductCardNew = ({
   return (
     <ContextConsumer>
       {({ addQuantityToCart }) => (
-        <div css={cardPadding} className="row-card fadeItem">
+        <div css={cardPadding} className={`row-card fadeItem ${ blur ? 'disabled-link no-select no-drag' : ''}`}>
           <div css={cardStatus}>{preorder !== null ? preorder : ''}</div>
           <div css={cardContainer}>
             <div css={imgContainer}>
-              <div css={imgCover}>
-                <div css={cardBottom}>
-                  <div css={nameText}>{displayName}</div>
-                  <div css={priceText}>{'From $' + lowPrice.toFixed(2)}</div>
-                  <div css={productTypeText}>{productType}</div>
+              { 
+                (!blur) && 
+                <div css={imgCover}>
+                  <div css={cardBottom}>
+                    <div css={nameText}>{displayName}</div>
+                    <div css={priceText}>{'From $' + lowPrice.toFixed(2)}</div>
+                    <div css={productTypeText}>{productType}</div>
+                  </div>
                 </div>
-              </div>
-              <Link to={url} className="link-no-style">
+              }
+              <Link to={url} className={`link-no-style ${ blur ? 'disabled-link no-select no-drag' : ''}`}>
+                {
+                  (blur) && 
+                  <div css={imgNSFWOverlay}>
+                    <span css={imgNSFWOverlayText}>18+ Content</span>
+                  </div>
+                }
                 <Img css={imgStyles} fluid={{ ...imgData, aspectRatio: 0.7 }} />
               </Link>
             </div>
@@ -170,6 +180,23 @@ const imgContainer = css`
 
 const imgStyles = css`
   border-radius: 6px;
+`
+
+const imgNSFWOverlay = css`
+  display: flex;
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,20,40,.75);
+  backdrop-filter: blur(3px);
+  border-radius: 8px;
+  justify-content: center;
+  align-items: center;
+`
+
+const imgNSFWOverlayText = css`
+  color: white;
 `
 
 const cardStatus = css`

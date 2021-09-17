@@ -6,6 +6,7 @@ import { Container, Row } from 'react-bootstrap'
 import CheckoutProgress from '../Checkout/CheckoutProgress'
 import CheckoutHeader from '../Checkout/CheckoutHeader'
 import CartProduct from '../Cart/CartProduct'
+import { window } from 'browser-monads';
 
 const getProduct = flatProduct => {
   return flatProduct.split('|')

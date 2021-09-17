@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { useStaticQuery, graphql, Link } from 'gatsby'
 import Img from 'gatsby-image'
 import { css } from '@emotion/core'
@@ -11,36 +11,46 @@ const OtherProductCard = ({
   productType,
   price,
   url,
+  blur,
 }) => {
   return (
     <ContextConsumer>
       {({ addQuantityToCart }) => (
-        <div css={cardPadding} className="row-card fadeItem">
+        <div css={cardPadding} className={`row-card fadeItem ${ blur ? 'disabled-link no-select no-drag' : ''}`}>
           <div css={cardContainer}>
             <div css={imgContainer}>
-              <div css={imgCover}>
-                <div css={cardBottom}>
-                  <div css={nameText}>{name}</div>
-                  <div css={priceText}>{'$' + price}</div>
-                  <div css={productTypeText}>{productType}</div>
-                  <div
-                  onClick={() => {
-                    addQuantityToCart(
-                      asin,
-                      name,
-                      productType,
-                      imgData,
-                      1,
-                      1
-                    )
-                  }}
-                  css={addToCartButton}
-                >
-                  +
+              {
+                (!blur) &&
+                <div css={imgCover}>
+                  <div css={cardBottom}>
+                    <div css={nameText}>{name}</div>
+                    <div css={priceText}>{'$' + price}</div>
+                    <div css={productTypeText}>{productType}</div>
+                    <div
+                    onClick={() => {
+                      addQuantityToCart(
+                        asin,
+                        name,
+                        productType,
+                        imgData,
+                        1,
+                        1
+                      )
+                    }}
+                    css={addToCartButton}
+                  >
+                    +
+                  </div>
+                  </div>
                 </div>
-                </div>
-              </div>
+              }
               <Link to={url} className="link-no-style">
+                {
+                  (blur) && 
+                  <div css={imgNSFWOverlay}>
+                    <span css={imgNSFWOverlayText}>18+ Content</span>
+                  </div>
+                }
                 <Img css={imgStyles} fluid={{ ...imgData, aspectRatio: 0.7 }} />
               </Link>
             </div>
@@ -174,6 +184,25 @@ const imgContainer = css`
 
 const imgStyles = css`
   border-radius: 6px;
+`
+
+const imgNSFWOverlay = css`
+  display: flex;
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  image-rendering: pixelated;
+  background: rgba(0,20,40,.75);
+  backdrop-filter: blur(10px);
+  opacity:1;
+  border-radius: 8px;
+  justify-content: center;
+  align-items: center;
+`
+
+const imgNSFWOverlayText = css`
+  color: white;
 `
 
 const cardBottom = css`

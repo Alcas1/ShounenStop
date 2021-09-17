@@ -11,4 +11,5 @@ pricings:
     price: 900
 asin: s-PIaAhxmOI
 merchandise: other
+nsfw: true
 ---

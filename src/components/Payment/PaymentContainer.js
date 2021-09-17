@@ -10,6 +10,7 @@ import OrderSummary from '../Cart/OrderSummary'
 import OrderDetails from '../Checkout/OrderDetails'
 import ShippingDetails from '../Checkout/ShippingDetails'
 import ContextConsumer from '../LayoutItems/CartContext'
+import { window } from 'browser-monads';
 
 const sendOrderData = true
 

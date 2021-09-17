@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { graphql, navigate } from 'gatsby'
 
 import { css } from '@emotion/core'
@@ -6,6 +6,9 @@ import { Container } from 'react-bootstrap'
 import ProductPageContainer from '../../components/Products/ProductPageContainer'
 import ComiketProductCard from '../../components/Comiket/ComiketProductCard'
 import FilterProductCategory from '../../components/Products/FilterProductCategory'
+import NSFWToggle from '../../components/NSFW/NSFWToggle'
+import { NSFWContext } from '../../utils/NSFWContext'
+import { window } from 'browser-monads';
 
 const productTypeKey = 'producttype'
 const eventKey = 'event'
@@ -14,11 +17,12 @@ const navigateSelected = (url, hash) => {
 }
 
 const Comiket = ({ data, location }) => {
+  const { NSFWEnabled } = useContext(NSFWContext)
+
   const comiketProductData = data.comiketProducts.edges
   const comiketEventInfo = data.comiketEventInfo.edges
     .sort((a, b) => (a.node.frontmatter.currentEvent === true ? -1 : 1))
     .slice()
-
   const [iOS, setiOS] = React.useState(false);
 
   var currentEventKey = ''
@@ -177,6 +181,9 @@ const Comiket = ({ data, location }) => {
               {eventFilterMap[currentEventFilterListItem].eventDesc}
             </div>
           </div>
+          <div className="d-flex justify-content-end">
+          <NSFWToggle />
+          </div>
           <div className="row" css={productContentWrapper}>
             {comiketProductData
               .filter(edge => {
@@ -186,12 +193,14 @@ const Comiket = ({ data, location }) => {
               })
               .filter(edge => {
                 return currentEventFilterListItem !== ''
-                  ? edge.node.frontmatter.eventName ===
-                      currentEventFilterListItem
+                  ? edge.node.frontmatter.eventName === currentEventFilterListItem
                   : true
               })
               .sort((a, b) => {
                 return a.node.frontmatter.onsale === true ? -1 : 1
+              })
+              .sort((a, b) => {
+                return (!NSFWEnabled && a.node.frontmatter.nsfw) === true ? 1 : -1
               })
               .map((edge, index) => (
                 <ComiketProductCard
@@ -204,6 +213,7 @@ const Comiket = ({ data, location }) => {
                   url={'/products' + edge.node.fields.slug}
                   onsale={edge.node.frontmatter.onsale}
                   delay={iOS ? index/10 : index*25}
+                  blur={!NSFWEnabled && edge.node.frontmatter.nsfw}
                 />
               ))}
           </div>
@@ -321,6 +331,7 @@ export const ComiketProductCategoryQuery = graphql`
             asin
             producttype
             eventId
+            nsfw
             onsale
             image {
               childImageSharp {

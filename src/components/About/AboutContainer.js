@@ -82,9 +82,8 @@ const AboutContainer = () => {
                 <span css={titleHeader}>CTO</span>
                 <div css={personBorder}></div>
                 <p>
-                  Created the site from scratch and is responsible for the UI/UX design. Feel
-                  free to contact him if you have a website you would like to
-                  improve or want to create a website.
+                  Created the site end to end and is responsible for the UI/UX design. 
+                  Passionate about technology and building cool things.
                 </p>
                 <div css={logoCloud}>
                   <a

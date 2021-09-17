@@ -1081,6 +1081,7 @@ ul li {
 
 .disabled-link {
   pointer-events: none;
+  touch-action: none;
 }
 
 .no-select {

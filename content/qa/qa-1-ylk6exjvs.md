@@ -5,6 +5,6 @@ answer: "Usually, there are 6 of these events each year, Comiket, Comic1, and
   such Comic Treasure. When these event items are announced, we will post on
   facebook to let everyone know. We recommend following our facebook page for
   these details. "
-order: 1
+order: 2
 id: YLK6ExJvs
 ---

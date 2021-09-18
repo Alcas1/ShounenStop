@@ -10,6 +10,6 @@ answer: >
   reasonable value on the shipment to minimize the chance of any border delay.
   Please pay any import fees for delivery if required, we take no responsibility
   for packages delayed by customs, as such a situation is beyond our control.
-order: 4
+order: 7
 id: tR7NtRZyz
 ---

@@ -6,6 +6,6 @@ answer: "If items received were damaged in transit or lost in the mail, we will
   expectations (i.e. size, thickness, materials). Please understand that these
   dimensions are determined by the doujin circles themselves, and they often do
   not provide much information on their official Japanese sites. "
-order: 2
+order: 4
 id: txs2h5f3U
 ---

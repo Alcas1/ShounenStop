@@ -7,6 +7,6 @@ answer: >
   insurance and then refund you in full. Please note that this situation is very
   uncommon, as the Hong Kong Post is known to be one of the most reliable
   couriers in Asia. 
-order: 3
+order: 6
 id: TngBHf7eS
 ---

@@ -8,6 +8,6 @@ answer: Yes, we would recommend a triple sleeve setup. First, place the Yugioh
   bordering inside the standard-sized sleeve. Remember to have the oversleeve
   cover the standard sleeve's opening on the top. Check out our in stock items
   for oversleeves.
-order: 2
+order: 5
 id: s-N1Ku8Nzwo-s
 ---

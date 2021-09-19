@@ -7,10 +7,12 @@ const QACardList = ({}) => {
   const cards = useStaticQuery(query)
     .qaCards.edges.slice()
     .sort((a, b) => (a.order > b.order ? -1 : 1))
+  console.log(cards)
   return (
     <div css={QACardListContainer}>
       {cards.map(edge => (
         <QACard
+          keys={edge.node.frontmatter.order}
           key={edge.node.frontmatter.order}
           question={edge.node.frontmatter.question}
           answer={edge.node.frontmatter.answer}
@@ -30,7 +32,14 @@ export default QACardList
 export const query = graphql`
   query QACardQuery {
     qaCards: allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "/qa-/" } }
+      filter: { 
+        fileAbsolutePath: { regex: "/qa-/" },
+        frontmatter:{
+          question: {
+            ne:null
+          }
+        }
+     }
     ) {
       edges {
         node {

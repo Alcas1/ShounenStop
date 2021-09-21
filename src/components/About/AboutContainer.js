@@ -6,7 +6,6 @@ import { useStaticQuery, graphql } from 'gatsby'
 import { Container, Row } from 'react-bootstrap'
 const AboutContainer = () => {
   const images = useStaticQuery(query)
-
   return (
     <Container css={contactWrapper} fluid>
       <Row>

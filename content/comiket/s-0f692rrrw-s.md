@@ -2,6 +2,7 @@
 image: images/comictreasuree3bm-1oviaadaim.jpg
 producttype: Playmat
 eventId: c-DXJvvgVBj-c
+nsfw: true
 weight: 0
 pricings:
   - quantity: 1

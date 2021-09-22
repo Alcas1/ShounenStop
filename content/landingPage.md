@@ -2,7 +2,7 @@
 landingText: Weiss Schwarz, Comiket, and Anime items at a great value
 landingSubtitle: $8 Shipping on all carts
 landingImage: images/sao.jpg
-release1: s-BnAfMgvyk-s
-release2: s-6bSCZ5E5k-s
-release3: s-gPWyRtEul-s
+release1: s-YWmZFsqeU-s
+release2: ""
+release3: ""
 ---

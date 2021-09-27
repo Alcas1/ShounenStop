@@ -12,7 +12,6 @@ const QACardList = ({}) => {
     <div css={QACardListContainer}>
       {cards.map(edge => (
         <QACard
-          keys={edge.node.frontmatter.order}
           key={edge.node.frontmatter.order}
           question={edge.node.frontmatter.question}
           answer={edge.node.frontmatter.answer}

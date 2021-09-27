@@ -7,7 +7,6 @@ const QACardList = ({}) => {
   const cards = useStaticQuery(query)
     .qaCards.edges.slice()
     .sort((a, b) => (a.order > b.order ? -1 : 1))
-  console.log(cards)
   return (
     <div css={QACardListContainer}>
       {cards.map(edge => (

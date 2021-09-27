@@ -187,14 +187,11 @@ const Comiket = ({ data, location }) => {
           <div className="row" css={productContentWrapper}>
             {comiketProductData
               .filter(edge => {
-                return productTypeFilterItem !== 'All'
+                return (productTypeFilterItem !== 'All'
                   ? edge.node.frontmatter.producttype === productTypeFilterItem
-                  : true
-              })
-              .filter(edge => {
-                return currentEventFilterListItem !== ''
+                  : true) && (currentEventFilterListItem !== ''
                   ? edge.node.frontmatter.eventName === currentEventFilterListItem
-                  : true
+                  : true)
               })
               .sort((a, b) => {
                 return a.node.frontmatter.onsale === true ? -1 : 1

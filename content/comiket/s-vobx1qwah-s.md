@@ -1,0 +1,12 @@
+---
+image: images/comiketsummer715fvfqbnel._ac_sl1098_.jpg
+producttype: Sleeves
+eventId: 1mYu6cGMR
+nsfw: true
+weight: 0
+pricings:
+  - quantity: 1
+    price: 24
+asin: s-voBX1qwAH-s
+merchandise: comiket
+---

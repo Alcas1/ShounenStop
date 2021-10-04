@@ -2,7 +2,7 @@
 image: images/comic1fallaawwwwwwww.jpg
 producttype: Sleeves
 eventId: c-yCos22G1y-c
-nsfw: false
+nsfw: true
 weight: 0
 pricings:
   - quantity: 1

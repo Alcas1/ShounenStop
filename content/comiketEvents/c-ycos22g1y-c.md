@@ -1,5 +1,5 @@
 ---
-eventName: comic 1 19
+eventName: comic 1 19 (current)
 currentEvent: true
 onsale: true
 eventDesc: "First come first serve, we may provide you with updated prices or

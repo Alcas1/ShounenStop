@@ -1,6 +1,6 @@
 ---
 eventName: "Air Comic Treasure Pt 2 "
-currentEvent: true
+currentEvent: false
 onsale: false
 eventDesc: "Slightly later deadline for these items, hence the name part 2.
   First come first serve, we may provide you with updated prices or set purchase

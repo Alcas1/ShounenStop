@@ -1,0 +1,12 @@
+---
+image: images/comic1falle5c8ewjucaenfkp.jpg
+producttype: Sleeves
+eventId: c-yCos22G1y-c
+nsfw: false
+weight: 0
+pricings:
+  - quantity: 1
+    price: 24
+asin: s-9tTCeezwk-s
+merchandise: comiket
+---

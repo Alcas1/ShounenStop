@@ -1,7 +1,8 @@
 ---
 image: images/puriumanagoyad-i9unuvaaa-8od.jpg
 producttype: Playmat
-eventId: c-c3dcWkXD2-c
+eventId: c-yCos22G1y-c
+nsfw: true
 weight: 0
 pricings:
   - quantity: 1

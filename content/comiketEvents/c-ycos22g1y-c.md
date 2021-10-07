@@ -1,7 +1,7 @@
 ---
-eventName: comic 1 19 (current)
+eventName: "comic 1 19 "
 currentEvent: true
-onsale: true
+onsale: false
 eventDesc: "First come first serve, we may provide you with updated prices or
   set purchase requirements as further information is released from the doujin
   circles, but only if it is absolutely necessary. Please check your email and

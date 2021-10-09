@@ -1,7 +1,7 @@
 import os
 import sys
 
-eventId = sys.arv[0] or 'c-vq3UkDleN-c' 
+eventId = 'c-vq3UkDleN-c' 
 
 comiketDir = "content/comiket"
 nonEventReferencedImages = []

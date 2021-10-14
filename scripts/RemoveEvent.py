@@ -1,7 +1,7 @@
 import os
 import sys
 
-eventId = 'c-vq3UkDleN-c' 
+eventId = 'c-c3dcWkXD2-c' 
 
 comiketDir = "content/comiket"
 nonEventReferencedImages = []
@@ -26,7 +26,6 @@ for filename in os.listdir(comiketDir):
 
 for key in itemsToDelete:
   os.remove(key)
-
   if os.path.exists(itemsToDelete[key]):
     if itemsToDelete[key] in nonEventReferencedImages:
       print("Cant delete referenced image:", itemsToDelete[key])

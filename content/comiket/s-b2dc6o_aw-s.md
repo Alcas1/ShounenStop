@@ -2,7 +2,7 @@
 image: images/fcx0xasuyamebe8.jpg
 producttype: Playmat
 eventId: c-JlGOr92CB-c
-nsfw: true
+nsfw: false
 weight: 0
 pricings:
   - quantity: 1

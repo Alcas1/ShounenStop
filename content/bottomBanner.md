@@ -1,7 +1,5 @@
 ---
-bannerText: "IMPORTANT: Site transactions and arrangements made after September
-  21st may experience shipping delays until November 7th due to our operations
-  staff returning to the United States as well as the Delta variant increasing
-  quarantine times for travelers from US to Hong Kong. Thank you for
-  understanding. "
+bannerText: "Note: Hong Kong post has an official estimated 7-14 working days to
+  the US and most other parts of the world. Please note that this delivery time
+  may be extended to a month due to the pandemic. Thank you for understanding."
 ---

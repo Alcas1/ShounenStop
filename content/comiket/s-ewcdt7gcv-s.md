@@ -1,7 +1,7 @@
 ---
 image: images/comic1falltttttw.jpg
-producttype: Sleeves
-eventId: c-yCos22G1y-c
+producttype: Mini Sleeves
+eventId: c-JlGOr92CB-c
 nsfw: false
 weight: 0
 pricings:

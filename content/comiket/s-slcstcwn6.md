@@ -5,7 +5,7 @@ eventId: 1mYu6cGMR
 nsfw: false
 pricings:
   - quantity: 1
-    price: 24
+    price: 26
 asin: s-SLcstcWn6
 merchandise: comiket
 ---

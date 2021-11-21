@@ -9,7 +9,7 @@ nsfw: false
 pricings:
   - quantity: 1
     price: 140
-description: Single card in stock
+description: Single card in stock (Please do not check out with more than 1 in cart)
 weight: 0
 preorder: ""
 release: ""

@@ -1,5 +1,5 @@
 ---
-image: images/aircomiket3eyf7ifiu4amgibt.jpg
+image: images/delatereyf7ifiu4amgibt.jpg
 producttype: Playmat
 eventId: 1mYu6cGMR
 nsfw: true

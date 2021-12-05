@@ -4,6 +4,7 @@ producttype: Playmat
 eventId: 1mYu6cGMR
 nsfw: true
 weight: 0
+onsale: false
 pricings:
   - quantity: 1
     price: 40

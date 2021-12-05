@@ -6,7 +6,8 @@ nsfw: false
 weight: 0
 pricings:
   - quantity: 1
-    price: 32
+    price: 26
+description: Holo foil sleeves
 asin: s-oKP9PqQ4a-s
 merchandise: comiket
 ---

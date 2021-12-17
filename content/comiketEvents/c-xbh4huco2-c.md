@@ -1,5 +1,5 @@
 ---
-eventName: Comiket Winter 22
+eventName: Comiket Winter 22 (Current)
 currentEvent: true
 onsale: true
 eventDesc: "First come first serve, we may provide you with updated prices or

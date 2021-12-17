@@ -1,5 +1,5 @@
 ---
-eventName: Sunshine Creation Autumn 2021 (Current)
+eventName: "Sunshine Creation Autumn 2021 "
 currentEvent: true
 onsale: false
 eventDesc: "Event has concluded. First come first serve, we may provide you with

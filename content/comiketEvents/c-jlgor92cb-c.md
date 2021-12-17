@@ -1,6 +1,6 @@
 ---
 eventName: "Sunshine Creation Autumn 2021 "
-currentEvent: true
+currentEvent: false
 onsale: false
 eventDesc: "Event has concluded. First come first serve, we may provide you with
   updated prices or set purchase requirements as further information is released

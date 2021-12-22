@@ -2,7 +2,7 @@
 image: images/fseefesefxc.jpg
 producttype: Sleeves
 eventId: c-xBh4HucO2-c
-nsfw: false
+nsfw: true
 weight: 0
 pricings:
   - quantity: 1

@@ -1,0 +1,12 @@
+---
+image: images/fgzjzd9aqaq7vuw.jpg
+producttype: Playmat
+eventId: c-xBh4HucO2-c
+nsfw: false
+weight: 0
+pricings:
+  - quantity: 1
+    price: 65
+asin: s-UavqnmaCt-s
+merchandise: comiket
+---

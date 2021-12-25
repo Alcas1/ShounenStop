@@ -8,7 +8,7 @@ color: "#e9847b"
 nsfw: false
 pricings:
   - quantity: 1
-    price: 100
+    price: 85
 description: "2 of each 7 kinds of opened tds "
 weight: 3
 preorder: 2021-09-08T16:00:00.000Z

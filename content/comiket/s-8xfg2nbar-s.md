@@ -2,7 +2,7 @@
 image: images/fg3gbb9aqau4b58.jpeg
 producttype: Deckbox
 eventId: c-xBh4HucO2-c
-nsfw: true
+nsfw: false
 weight: 0
 pricings:
   - quantity: 1

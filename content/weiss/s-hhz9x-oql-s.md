@@ -8,7 +8,7 @@ color: "#f55919"
 nsfw: false
 pricings:
   - quantity: 1
-    price: 140
+    price: 100
 description: Single card in stock (Please do not check out with more than 1 in
   cart). If you would like to verify the condition of this card, send us an
   email.

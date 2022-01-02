@@ -8,7 +8,7 @@ color: "#8a61d3"
 nsfw: false
 pricings:
   - quantity: 1
-    price: 235
+    price: 200
 description: Single card in stock (Please do not check out with more than 1 in
   cart). If you would like to verify the condition, send us an email.
 weight: 0

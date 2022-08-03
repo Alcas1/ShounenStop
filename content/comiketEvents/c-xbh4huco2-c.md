@@ -1,6 +1,6 @@
 ---
 eventName: Comiket Winter 22 (closed)
-currentEvent: true
+currentEvent: false
 onsale: false
 eventDesc: "First come first serve. Due to the holidays, we expect delivery to
   be slightly longer than usual. We may also be able to split certain sleeve

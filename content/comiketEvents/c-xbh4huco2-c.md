@@ -2,8 +2,7 @@
 eventName: Comiket Winter 22 (closed)
 currentEvent: false
 onsale: false
-eventDesc: "First come first serve. Due to the holidays, we expect delivery to
-  be slightly longer than usual. We may also be able to split certain sleeve
+eventDesc: "First come first serve. We may also be able to split certain sleeve
   sets, send us an email. Refunds will be provided for items that cannot be
   purchased. "
 preorder: 2021-12-26T16:00:00.000Z

@@ -7,6 +7,7 @@ weight: 0
 pricings:
   - quantity: 1
     price: 69
+description: sleeves
 asin: s-HM_5W8sTa-s
 merchandise: comiket
 ---

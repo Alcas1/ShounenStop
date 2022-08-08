@@ -7,6 +7,7 @@ weight: 0
 pricings:
   - quantity: 1
     price: 68
+description: playmat
 asin: s-bS9rBQACN-s
 merchandise: comiket
 ---

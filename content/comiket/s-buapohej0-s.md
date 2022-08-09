@@ -6,7 +6,8 @@ nsfw: false
 weight: 0
 pricings:
   - quantity: 1
-    price: 68
+    price: 110
+description: holo foil playmat
 asin: s-buapoHeJ0-s
 merchandise: comiket
 ---

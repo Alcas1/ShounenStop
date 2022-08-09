@@ -6,7 +6,8 @@ nsfw: true
 weight: 0
 pricings:
   - quantity: 1
-    price: 68
+    price: 110
+description: gold border playmat
 asin: s-iG5qB5WxM-s
 merchandise: comiket
 ---

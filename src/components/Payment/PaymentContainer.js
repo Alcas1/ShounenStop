@@ -10,7 +10,7 @@ import OrderSummary from '../Cart/OrderSummary'
 import OrderDetails from '../Checkout/OrderDetails'
 import ShippingDetails from '../Checkout/ShippingDetails'
 import ContextConsumer from '../LayoutItems/CartContext'
-import { window } from 'browser-monads';
+import { window } from 'browser-monads'
 
 const sendOrderData = true
 
@@ -39,9 +39,7 @@ class PaymentContainer extends React.Component {
   constructor(props) {
     super(props)
     const price = props.orderContext.totalPrice
-    const paypalFeeAmount = Number(
-      (((price + 0.4900) / 0.9651) - price).toFixed(2)
-    )
+    const paypalFeeAmount = Number(((price + 0.49) / 0.9651 - price).toFixed(2))
 
     this.state = {
       isValidating: false,
@@ -107,7 +105,7 @@ class PaymentContainer extends React.Component {
                   self.props.orderContext.paypalFeeInfo = self.state
                   navigate('/confirmation', {
                     state: {
-                      orderContext: self.props.orderContext
+                      orderContext: self.props.orderContext,
                     },
                   })
                 }
@@ -141,7 +139,9 @@ class PaymentContainer extends React.Component {
           orderInfo
         )
         .then(function(response) {
-          // console.log(response)
+          if (response.status === 500 || response.status === 503) {
+            alert('AWS is down, please contact us for support with your ordr')
+          }
         })
     }
   }
@@ -292,8 +292,7 @@ class PaymentContainer extends React.Component {
                                       '/.netlify/functions/sendOrderEmail',
                                       this.props.orderContext
                                     )
-                                    .then(function(response) {
-                                    })
+                                    .then(function(response) {})
                                   window.onbeforeunload = null
 
                                   navigate('/confirmation', {
@@ -313,20 +312,23 @@ class PaymentContainer extends React.Component {
                           <Form.Group controlId="formBasicCheckbox">
                             <Form.Check
                               onClick={() => {
-                                this.setState(prevState => {
-                                  var total = prevState.currentTotal
-                                  if (prevState.paypalFeesEnabled) {
-                                    total -= this.state.paypalFees
-                                  } else {
-                                    total += this.state.paypalFees
+                                this.setState(
+                                  prevState => {
+                                    var total = prevState.currentTotal
+                                    if (prevState.paypalFeesEnabled) {
+                                      total -= this.state.paypalFees
+                                    } else {
+                                      total += this.state.paypalFees
+                                    }
+                                    return {
+                                      paypalFeesEnabled: !prevState.paypalFeesEnabled,
+                                      currentTotal: total,
+                                    }
+                                  },
+                                  () => {
+                                    this.sendCheckoutData()
                                   }
-                                  return {
-                                    paypalFeesEnabled: !prevState.paypalFeesEnabled,
-                                    currentTotal: total,
-                                  }
-                                }, ()=>{
-                                  this.sendCheckoutData()
-                                })
+                                )
                               }}
                               css={paypalGoodsCheckbox}
                               type="checkbox"
@@ -342,7 +344,8 @@ class PaymentContainer extends React.Component {
                               </li>
                               <li css={disclaimerText}>
                                 For Paypal Goods and Services Protection, you
-                                must enable it here <b>AND</b> on Paypal for a fee.
+                                must enable it here <b>AND</b> on Paypal for a
+                                fee.
                               </li>
                               <li css={disclaimerText}>
                                 This allows us to offer the best value to
@@ -510,10 +513,14 @@ class PaymentContainer extends React.Component {
                   <br />
                   If you refresh you, will lose your progress
                   <br />
-                  Confirmation can take up to 10 seconds, if not please contact us.
+                  Confirmation can take up to 10 seconds, if not please contact
+                  us.
                   <br />
                   <br />
-                  <b>Please make sure the email address you input is the same email used for Paypal.</b>
+                  <b>
+                    Please make sure the email address you input is the same
+                    email used for Paypal.
+                  </b>
                 </div>
               </div>
             )}

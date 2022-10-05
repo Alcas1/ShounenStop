@@ -3,6 +3,7 @@ image: images/zenbltvmuwauea-1.jpg
 producttype: Sleeves
 eventId: 1mYu6cGMR
 nsfw: true
+onsale: false
 pricings:
   - quantity: 1
     price: 28

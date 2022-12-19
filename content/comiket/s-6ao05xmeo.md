@@ -5,7 +5,7 @@ eventId: 1mYu6cGMR
 nsfw: true
 pricings:
   - quantity: 1
-    price: 27
+    price: 22.95
 asin: s-6AO05XMeo
 merchandise: comiket
 ---

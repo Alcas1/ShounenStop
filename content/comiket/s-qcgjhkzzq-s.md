@@ -6,7 +6,7 @@ nsfw: true
 weight: 0
 pricings:
   - quantity: 1
-    price: 23
+    price: 19.55
 asin: s-qcgjHKZZQ-s
 merchandise: comiket
 ---

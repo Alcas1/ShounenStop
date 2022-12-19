@@ -6,7 +6,7 @@ nsfw: false
 weight: 0
 pricings:
   - quantity: 1
-    price: 60
+    price: 40
 description: Larger sized playmat with stitched edges
 asin: s-DOegX-BhC-s
 merchandise: comiket

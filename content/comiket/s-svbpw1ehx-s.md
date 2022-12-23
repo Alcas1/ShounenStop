@@ -7,6 +7,7 @@ weight: 0
 pricings:
   - quantity: 1
     price: 68
+description: triple sleeves set
 asin: s-SVBpw1ehx-s
 merchandise: comiket
 ---

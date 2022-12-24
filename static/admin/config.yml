@@ -233,6 +233,11 @@ collections:
           min: 0,
         }
       - {
+          label: Circle,
+          name: circle,
+          widget: string,
+        }
+      - {
           label: 'On Sale Override',
           name: onsale,
           widget: boolean,

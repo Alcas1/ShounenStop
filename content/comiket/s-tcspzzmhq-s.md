@@ -7,6 +7,7 @@ weight: 0
 pricings:
   - quantity: 1
     price: 49
+description: 60 pcs each
 asin: s-TCSpzZMhq-s
 merchandise: comiket
 ---

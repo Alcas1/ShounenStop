@@ -236,6 +236,7 @@ collections:
           label: Circle,
           name: circle,
           widget: string,
+          required: false,
         }
       - {
           label: 'On Sale Override',

@@ -1,7 +1,7 @@
 ---
-eventName: Comiket 101
+eventName: Comiket 101 (Closed)
 currentEvent: true
-onsale: true
+onsale: false
 eventDesc: First come first serve. We may also be able to split certain sleeve
   sets, send us an email. Refunds will be provided for items that cannot be
   purchased.

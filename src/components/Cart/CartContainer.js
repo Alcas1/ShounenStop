@@ -169,6 +169,7 @@ export const query = graphql`
             eventId
             producttype
             series
+            circle
             color
             image {
               childImageSharp {

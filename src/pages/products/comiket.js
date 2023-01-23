@@ -328,6 +328,7 @@ export const ComiketProductCategoryQuery = graphql`
             asin
             producttype
             eventId
+            circle
             nsfw
             onsale
             image {

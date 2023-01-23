@@ -4,7 +4,7 @@ producttype: Sleeves
 eventId: 1mYu6cGMR
 nsfw: false
 weight: 0
-circle: Test
+circle: ""
 pricings:
   - quantity: 1
     price: 26

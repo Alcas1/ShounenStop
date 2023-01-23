@@ -44,6 +44,7 @@ export const ComiketProductTemplateQuery = graphql`
         asin
         producttype
         eventId
+        circle
         image {
           childImageSharp {
             fluid(maxWidth: 800, quality: 100) {

@@ -1,7 +1,7 @@
 import os
 import sys
 
-eventId = 'c-xBh4HucO2-c' 
+eventId = 'c-B9Hn1P14e-c'
 
 comiketDir = "content/comiket"
 nonEventReferencedImages = []
@@ -9,10 +9,10 @@ itemFiles = []
 itemsToDelete = {}
 
 for filename in os.listdir(comiketDir):
-  if(filename.endswith(".md")):
+  if (filename.endswith(".md")):
     imageToDelete = ""
     filePath = comiketDir + "/" + filename
-    file = open(filePath)
+    file = open(filePath, encoding='utf8')
     fileBuffer = file.read()
     lines = fileBuffer.split("\n")
     for line in lines:

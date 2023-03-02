@@ -6,7 +6,7 @@ nsfw: false
 weight: 0
 pricings:
   - quantity: 1
-    price: 12
+    price: 13
 description: holo sleeves
 asin: s-dxIisZlJi-s
 merchandise: comiket

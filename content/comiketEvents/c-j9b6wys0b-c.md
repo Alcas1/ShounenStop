@@ -1,7 +1,7 @@
 ---
-eventName: SC 23 (Current)
+eventName: SC 23 (Closed)
 currentEvent: true
-onsale: true
+onsale: false
 eventDesc: First come first serve. Deadline cut off at 9am EST. We may also be
   able to split certain sleeve sets, send us an email. Items that are popular or
   are from previous events may have lower chances of fulfilment, refunds will be

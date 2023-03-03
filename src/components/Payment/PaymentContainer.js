@@ -131,6 +131,8 @@ class PaymentContainer extends React.Component {
     orderInfo.paypalFeesEnabled = this.state.paypalFeesEnabled
     orderInfo.totalPrice = this.state.currentTotal
     orderInfo.paypalFeeInfo = this.state
+    orderInfo.userInfo.state = orderInfo.userInfo.state.trim()
+    orderInfo.userInfo.city = orderInfo.userInfo.city.trim()
 
     if (sendOrderData) {
       axios

@@ -38,12 +38,14 @@ const CheckoutContainer = ({ orderContext }) => {
           .required('Required'),
         address: Yup.string().required('Required'),
         city: Yup.string()
+          .trim()
           .matches(alpha, {
             message: 'Enter Valid City Name',
             excludeEmptyString: true,
           })
           .required('Required'),
         state: Yup.string()
+          .trim()
           .matches(alpha, {
             message: 'Enter Valid State Name',
             excludeEmptyString: true,

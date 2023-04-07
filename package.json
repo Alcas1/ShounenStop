@@ -34,7 +34,7 @@
     "gatsby-remark-images-medium-zoom": "^1.7.0",
     "gatsby-remark-relative-images": "^0.3.0",
     "gatsby-source-filesystem": "^2.3.8",
-    "gatsby-transformer-remark": "^2.8.17",
+    "gatsby-transformer-remark": "^5.25.1",
     "gatsby-transformer-sharp": "^2.5.3",
     "jquery": "^1.12.4",
     "netlify-cli": "^2.52.0",

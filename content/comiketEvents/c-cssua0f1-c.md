@@ -1,5 +1,5 @@
 ---
-eventName: Comic1 23
+eventName: Comic1 Spr23 (Current)
 currentEvent: true
 onsale: true
 eventDesc: First come first serve. Deadline cut off at 10am EST. We may also be

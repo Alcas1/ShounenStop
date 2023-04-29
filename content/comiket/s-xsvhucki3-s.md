@@ -8,6 +8,7 @@ circle: EATOS
 pricings:
   - quantity: 1
     price: 67
+description: .
 asin: s-XsvhuCKi3-s
 merchandise: comiket
 ---

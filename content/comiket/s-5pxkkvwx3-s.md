@@ -8,6 +8,7 @@ circle: cluster
 pricings:
   - quantity: 1
     price: 25
+description: .
 asin: s-5pxKkvwX3-s
 merchandise: comiket
 ---

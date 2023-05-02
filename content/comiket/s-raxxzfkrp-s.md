@@ -8,6 +8,7 @@ circle: CakeRabbits
 pricings:
   - quantity: 1
     price: 65
+description: .
 asin: s-rAXXZFKRp-s
 merchandise: comiket
 ---

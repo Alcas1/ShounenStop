@@ -1,7 +1,7 @@
 ---
 eventName: Comic1 Spr23 (Current)
 currentEvent: true
-onsale: true
+onsale: false
 eventDesc: First come first serve. Deadline cut off at 10am EST. We may also be
   able to split certain sleeve sets, send us an email. Items that are popular or
   are from previous events may have lower chances of fulfilment, refunds will be

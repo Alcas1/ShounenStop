@@ -18,7 +18,7 @@ const LandingImage = ({ landingImageData, landingText, landingSubtitle }) => {
           <span css={shippingText}>{landingSubtitle}</span>
         </div>
         <div css={lineBreakSm}></div>
-        <Link to="/products/weiss">
+        <Link to="/products/comiket">
           <div css={shopNow}>
             <span>EXPLORE NOW</span>
           </div>

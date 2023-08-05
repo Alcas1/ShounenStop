@@ -2,6 +2,8 @@
 image: images/sup-slv-kmc-shhp2.png
 producttype: Sleeves
 eventId: 1mYu6cGMR
+nsfw: false
+onsale: false
 pricings:
   - quantity: 1
     price: 5.15

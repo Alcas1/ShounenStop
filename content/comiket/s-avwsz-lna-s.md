@@ -7,7 +7,8 @@ weight: 0
 circle: CakeRabbits
 pricings:
   - quantity: 1
-    price: 66
+    price: 83
+description: foil playmat
 asin: s-AVWsZ-lna-s
 merchandise: comiket
 ---

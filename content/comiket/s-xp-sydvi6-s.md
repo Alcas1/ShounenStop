@@ -8,6 +8,7 @@ circle: Shirometsu
 pricings:
   - quantity: 1
     price: 66
+description: playmat
 asin: s-Xp-SYDvi6-s
 merchandise: comiket
 ---

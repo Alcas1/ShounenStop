@@ -6,7 +6,8 @@ nsfw: false
 weight: 0
 pricings:
   - quantity: 1
-    price: 20.4
+    price: 18
+description: 2x in stock
 asin: s-joibzRx3A-s
 merchandise: comiket
 ---

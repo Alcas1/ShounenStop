@@ -5,7 +5,8 @@ eventId: 1mYu6cGMR
 nsfw: true
 pricings:
   - quantity: 1
-    price: 25.5
+    price: 23
+description: 2x in stock
 asin: s-JCN4EtYmU
 merchandise: comiket
 ---

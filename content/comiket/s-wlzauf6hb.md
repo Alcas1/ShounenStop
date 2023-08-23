@@ -6,6 +6,7 @@ nsfw: false
 pricings:
   - quantity: 1
     price: 18.7
+description: foil gold borders
 asin: s-wlzAUF6hB
 merchandise: comiket
 ---

@@ -29,7 +29,7 @@
     "gatsby-plugin-purgecss": "^5.0.0",
     "gatsby-plugin-react-helmet": "^3.3.2",
     "gatsby-plugin-remove-fingerprints": "^0.0.2",
-    "gatsby-plugin-robots-txt": "^1.8.0",
+    "gatsby-plugin-robots-txt": "^1.5.5",
     "gatsby-plugin-sharp": "^2.6.9",
     "gatsby-remark-images": "^3.3.11",
     "gatsby-remark-images-medium-zoom": "^1.7.0",

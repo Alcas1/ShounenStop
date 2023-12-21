@@ -7,7 +7,7 @@ eventDesc: First come first serve. Deadline cut off at 10am EST. We may also be
   are from previous events may have lower chances of fulfilment, refunds will be
   provided for items that cannot be purchased. Some special items may have price
   changes.
-preorder: 2023-12-26T00:00:00.000Z
+preorder: 2023-12-27T00:00:00.000Z
 release: 2023-02-10T00:00:00.000Z
 id: c-jy8GFj-HS-c
 ---

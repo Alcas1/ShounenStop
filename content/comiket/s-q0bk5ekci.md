@@ -3,6 +3,7 @@ image: images/roland-set.png
 producttype: Mini Sleeves
 eventId: 1mYu6cGMR
 nsfw: false
+onsale: false
 pricings:
   - quantity: 1
     price: 47

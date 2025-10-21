@@ -1,5 +1,5 @@
 ---
-eventName: C103 (Current)
+eventName: "C103 "
 currentEvent: true
 onsale: false
 eventDesc: Event has closed. First come first serve. Deadline cut off at 10am
